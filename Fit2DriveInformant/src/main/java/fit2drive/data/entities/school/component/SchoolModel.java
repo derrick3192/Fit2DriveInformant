@@ -14,7 +14,7 @@ public class SchoolModel {
 	
 	public void saveEntity(SchoolData data) {
 		School school = dao.createInstance(data);
-		
+		dao.save(school);
 	}
 
 }

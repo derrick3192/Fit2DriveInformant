@@ -32,6 +32,7 @@
 	
 	<!-- COMPONENTS -->
 	<bean id="employeeComponent"	class="fit2drive.data.entities.employee.component.EmployeeComponent"/>
+	<bean id="schoolComponent" class="fit2drive.data.entities.school.component.SchoolComponent"/>
 
 
 </beans>

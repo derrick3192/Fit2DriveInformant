@@ -34,6 +34,7 @@ public class Launcher {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("Spring.xml");
 		
 		MainBean mainBean = ctx.getBean(MainBean.class);
+		mainBean.start();
 		
 
 	}

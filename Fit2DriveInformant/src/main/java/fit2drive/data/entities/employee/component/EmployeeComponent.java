@@ -36,10 +36,13 @@ public class EmployeeComponent implements ApplicationListener<ApplicationEvent> 
 			EmployeeModel model = new EmployeeModel(dao);
 			this.controller = new EmployeeController(model, view, publisher);
 			controller.run();
+			return;
 		} else if (controller != null && controller.isFormOpen()) {
 			System.out.println("Form already open.");
+			return;
 		} else if(controller != null && !controller.isFormOpen()) {
 			this.controller.setVisible();
+			return;
 		}
 	}
 	
