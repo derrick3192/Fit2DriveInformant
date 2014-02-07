@@ -2,13 +2,12 @@ package fit2drive.data.entities.employee.component;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
-import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-public class EmployeeController {
+import fit2drive.data.controller.AbstractController;
+
+public class EmployeeController extends AbstractController {
 
 	private static volatile boolean frameClosed=true;
 
@@ -18,14 +17,11 @@ public class EmployeeController {
 
 	EmployeeModel model;
 	EmployeeDataView view;
-	JFrame frame = new JFrame();
 
 	public EmployeeController(
 			EmployeeModel model,
 			EmployeeDataView view) {
 		super();
-
-		initComponents();
 
 
 		this.model = model;
@@ -40,20 +36,6 @@ public class EmployeeController {
 	}
 
 
-	private void initComponents() {
-		this.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.frame.setSize(600,600);
-
-		frame.addWindowListener(new WindowAdapter()
-		{
-			public void windowClosing(WindowEvent e)
-			{
-				frameClosed = true;
-			}
-		});
-	}
-
-
 	public class createBtnAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -61,15 +43,6 @@ public class EmployeeController {
 		}
 	}
 
-
-	public synchronized void run() {
-		frameClosed = false;
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				frame.setVisible(true);
-			}
-		});
-	}
 
 
 

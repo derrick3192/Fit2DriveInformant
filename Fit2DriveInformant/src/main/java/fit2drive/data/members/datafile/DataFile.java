@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 
@@ -20,6 +21,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 @Data
 @Entity
+@Table(name="dataFile")
 public class DataFile extends F2DEntity {
 	
 	/** Extension of the file. **/
