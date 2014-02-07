@@ -27,7 +27,7 @@ import fit2drive.data.entities.employee.table.EmployeeTable;
 import fit2drive.data.members.address.Address;
 
 @SuppressWarnings({ "unused", "resource" })
-public class Main {
+public class Launcher {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
 
@@ -35,20 +35,6 @@ public class Main {
 		
 		MainBean mainBean = ctx.getBean(MainBean.class);
 		
-		EmployeeDaoImp dao = ctx.getBean(EmployeeDaoImp.class);
-		
-		Employee employee = new Employee(
-				"sim",
-				new Date(),
-				new Address(
-						"glebe",
-						"cheltenham",
-						3192));
-		
-		dao.save(employee);
-		
-		EmployeeTable table = new EmployeeTable(dao);
-		
-		mainBean.start();
+
 	}
 }
