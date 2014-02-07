@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- Configurations -->
+
+	<!-- for the component annotation -->
+	<context:component-scan base-package="fit2drive" />
+
+	<!-- For using AspectJ -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	
+	<!-- MAIN BEAN -->
+	<bean id="mainBean" class="fit2drive.MainBean" />
+	
+	
+	<!-- DAO -->
+	<bean id="attendenceDao" 	class="fit2drive.data.entities.attendence.dao.AttendenceDaoImp"/>
+	<bean id="employeeDao" 		class="fit2drive.data.entities.employee.dao.EmployeeDaoImp"/>
+	<bean id="feedbackDao"		class="fit2drive.data.entities.feedback.dao.FeedbackDaoImp"/>
+	<bean id="schoolDao"		class="fit2drive.data.entities.school.dao.SchoolDaoImp"/>
+	<bean id="signupDao"		class="fit2drive.data.entities.signup.dao.SignupDaoImp"/>
+	<bean id="workshopDao"		class="fit2drive.data.entities.workshop.dao.WorkshopDaoImp"/>
+	
+	
+	<!-- COMPONENTS -->
+	<bean id="employeeComponent"	class="fit2drive.data.entities.employee.component.EmployeeComponent"/>
+
+
+</beans>
+
+
