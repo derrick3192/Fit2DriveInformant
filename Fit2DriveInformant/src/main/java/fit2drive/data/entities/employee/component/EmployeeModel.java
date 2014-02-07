@@ -12,8 +12,8 @@ public class EmployeeModel{
 		this.dao = dao;
 	}
 	
-	public void saveEntity(EmployeeData employeeData) {
-		Employee employee = Employee.createInstance(employeeData);
+	public void saveEntity(EmployeeData data) {
+		Employee employee = dao.createInstance(data);
 		dao.save(employee);
 	}
 	

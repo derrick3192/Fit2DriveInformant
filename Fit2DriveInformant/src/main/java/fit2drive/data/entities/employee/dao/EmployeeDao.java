@@ -4,13 +4,18 @@ import java.awt.Image;
 
 import fit2drive.data.dao.Dao;
 import fit2drive.data.entities.employee.Employee;
+import fit2drive.data.entities.employee.EmployeeData;
+
 
 public interface EmployeeDao extends Dao<Employee> {
 	
 	/** get an employee with all of its members loaded **/
 	public Employee getInitialized(int id);
 	
-	/** Get the image of an imployee with the given ID **/
+	/** Get the image of an employee with the given ID **/
 	public Image getImageFromEmployeeID(int id);
+	
+	/** create an instance of employee data **/
+	public Employee createInstance(EmployeeData data);
 
 }

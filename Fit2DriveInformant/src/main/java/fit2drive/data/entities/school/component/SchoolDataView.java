@@ -5,9 +5,14 @@
 package fit2drive.data.entities.school.component;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import javax.swing.border.*;
+
 import com.jgoodies.forms.factories.*;
+
+import fit2drive.data.entities.school.SchoolData;
 import fit2drive.data.entities.view.*;
 import fit2drive.data.members.address.view.*;
 
@@ -22,6 +27,22 @@ public class SchoolDataView extends JPanel {
 	public SchoolDataView() {
 		initComponents();
 	}
+	
+	public void addBtnReadyActionListener(ActionListener createBtnAction) {
+		
+	}
+	
+	
+	public SchoolData getData() {
+		return new SchoolData(
+				txtName.getText(),
+				txtEmail.getText(),
+				txtPhone.getText(),
+				chkPublic.isSelected(),
+				chkPrivate.isSelected(),
+				txtReligion.getText(),
+				this.addressDataView1.getAddressData());
+	}
 
 	private void initComponents() {
 		// JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -29,17 +50,17 @@ public class SchoolDataView extends JPanel {
 		addressDataView1 = new AddressDataView();
 		panel1 = new JPanel();
 		label1 = new JLabel();
-		textField1 = new JTextField();
+		txtName = new JTextField();
 		label2 = new JLabel();
-		textField2 = new JTextField();
+		txtEmail = new JTextField();
 		label3 = new JLabel();
-		textField3 = new JTextField();
+		txtPhone = new JTextField();
 		label4 = new JLabel();
-		checkBox1 = new JCheckBox();
+		chkPublic = new JCheckBox();
 		label5 = new JLabel();
-		checkBox2 = new JCheckBox();
+		chkPrivate = new JCheckBox();
 		label6 = new JLabel();
-		textField4 = new JTextField();
+		txtReligion = new JTextField();
 		agreePanel1 = new AgreePanel();
 
 		//======== this ========
@@ -62,7 +83,7 @@ public class SchoolDataView extends JPanel {
 			panel1.add(label1, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
-			panel1.add(textField1, new GridBagConstraints(1, 0, 5, 1, 0.0, 0.0,
+			panel1.add(txtName, new GridBagConstraints(1, 0, 5, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 0), 0, 0));
 
@@ -71,7 +92,7 @@ public class SchoolDataView extends JPanel {
 			panel1.add(label2, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
-			panel1.add(textField2, new GridBagConstraints(1, 1, 5, 1, 0.0, 0.0,
+			panel1.add(txtEmail, new GridBagConstraints(1, 1, 5, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 0), 0, 0));
 
@@ -80,7 +101,7 @@ public class SchoolDataView extends JPanel {
 			panel1.add(label3, new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
-			panel1.add(textField3, new GridBagConstraints(1, 2, 5, 1, 0.0, 0.0,
+			panel1.add(txtPhone, new GridBagConstraints(1, 2, 5, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 0), 0, 0));
 
@@ -89,16 +110,16 @@ public class SchoolDataView extends JPanel {
 			panel1.add(label4, new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
-			panel1.add(checkBox1, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
+			panel1.add(chkPublic, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
 				GridBagConstraints.WEST, GridBagConstraints.VERTICAL,
 				new Insets(0, 0, 5, 5), 0, 0));
 
 			//---- label5 ----
-			label5.setText("Public");
+			label5.setText("Private");
 			panel1.add(label5, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
-			panel1.add(checkBox2, new GridBagConstraints(3, 3, 1, 1, 0.0, 0.0,
+			panel1.add(chkPrivate, new GridBagConstraints(3, 3, 1, 1, 0.0, 0.0,
 				GridBagConstraints.WEST, GridBagConstraints.VERTICAL,
 				new Insets(0, 0, 5, 5), 0, 0));
 
@@ -107,7 +128,7 @@ public class SchoolDataView extends JPanel {
 			panel1.add(label6, new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 0, 5), 0, 0));
-			panel1.add(textField4, new GridBagConstraints(1, 4, 5, 1, 0.0, 0.0,
+			panel1.add(txtReligion, new GridBagConstraints(1, 4, 5, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 0, 0), 0, 0));
 		}
@@ -121,17 +142,17 @@ public class SchoolDataView extends JPanel {
 	private AddressDataView addressDataView1;
 	private JPanel panel1;
 	private JLabel label1;
-	private JTextField textField1;
+	private JTextField txtName;
 	private JLabel label2;
-	private JTextField textField2;
+	private JTextField txtEmail;
 	private JLabel label3;
-	private JTextField textField3;
+	private JTextField txtPhone;
 	private JLabel label4;
-	private JCheckBox checkBox1;
+	private JCheckBox chkPublic;
 	private JLabel label5;
-	private JCheckBox checkBox2;
+	private JCheckBox chkPrivate;
 	private JLabel label6;
-	private JTextField textField4;
+	private JTextField txtReligion;
 	private AgreePanel agreePanel1;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }

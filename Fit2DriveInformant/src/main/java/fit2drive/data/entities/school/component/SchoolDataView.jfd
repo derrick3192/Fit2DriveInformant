@@ -25,7 +25,7 @@ new FormModel {
 					"text": "Name"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField1"
+					name: "txtName"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 1
 					"gridwidth": 5
@@ -37,7 +37,7 @@ new FormModel {
 					"gridy": 1
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField2"
+					name: "txtEmail"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 1
 					"gridy": 1
@@ -50,7 +50,7 @@ new FormModel {
 					"gridy": 2
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField3"
+					name: "txtPhone"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 1
 					"gridy": 2
@@ -63,20 +63,20 @@ new FormModel {
 					"gridy": 3
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
-					name: "checkBox1"
+					name: "chkPublic"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 1
 					"gridy": 3
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label5"
-					"text": "Public"
+					"text": "Private"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 2
 					"gridy": 3
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
-					name: "checkBox2"
+					name: "chkPrivate"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 3
 					"gridy": 3
@@ -88,7 +88,7 @@ new FormModel {
 					"gridy": 4
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField4"
+					name: "txtReligion"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridx": 1
 					"gridy": 4

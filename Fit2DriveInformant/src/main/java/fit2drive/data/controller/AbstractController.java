@@ -30,6 +30,18 @@ public abstract class AbstractController {
 			}
 		});
 	}
+	
+	public void displose() {
+		this.frame.dispose();
+	}
+	
+	public void setVisible() {
+		this.frame.setVisible(true);
+	}
+
+	public boolean isFormOpen() {
+		return this.frame.isVisible();
+	}
 
 
 }
