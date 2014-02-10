@@ -17,8 +17,10 @@
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 
 	
-	<!-- MAIN BEAN -->
-	<bean id="mainBean" class="fit2drive.MainBean" />
+	<!-- LAUNCHER BEAN -->
+	<bean id="mainBean" class="fit2drive.LauncherBean" />
+	
+	
 	
 	
 	<!-- DAO -->
@@ -31,6 +33,8 @@
 	
 	
 	<!-- COMPONENTS -->
+	<bean id="homeComponent"		class="fit2drive.gui.home.HomeComponent" />
+	
 	<bean id="employeeComponent"	class="fit2drive.data.entities.employee.component.EmployeeComponent"/>
 	<bean id="schoolComponent" class="fit2drive.data.entities.school.component.SchoolComponent"/>
 

@@ -1,40 +1,30 @@
-package fit2drive.data.entities.employee.component;
+package fit2drive.gui.home;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 
 import util.spring.gui.component.SComponent;
 import util.spring.gui.component.SController;
-import fit2drive.data.entities.employee.dao.EmployeeDao;
 
-
-
-public class EmployeeComponent extends SComponent {
+public class HomeComponent extends SComponent{
 	
-	@Autowired
-	EmployeeDao dao;
 	
 	@Autowired
 	ApplicationEventPublisher publisher;
-
-
+	
 	@Override
 	protected SController createController() {
-		return new EmployeeController(new EmployeeModel(dao), new EmployeeDataView());
+		return new HomeController(new HomeView(), new HomeModel(publisher));
 	}
 
 	@Override
 	protected Class<?> closeClass() {
-		return EmployeeCloseEvent.class;
+		return HomeCloseEvent.class;
 	}
 
 	@Override
 	protected Class<?> openClass() {
-		return EmployeeOpenEvent.class;
+		return HomeOpenEvent.class;
 	}
-	
-
-	
-	
 
 }

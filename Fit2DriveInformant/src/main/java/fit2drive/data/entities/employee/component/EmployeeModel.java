@@ -4,11 +4,11 @@ import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
 import fit2drive.data.entities.employee.dao.EmployeeDao;
 
-public class EmployeeModel{
+public class EmployeeModel {
 	
 	EmployeeDao dao;
 	
-	public EmployeeModel(EmployeeDao dao) {
+	EmployeeModel(EmployeeDao dao) {
 		this.dao = dao;
 	}
 	

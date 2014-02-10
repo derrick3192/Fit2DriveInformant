@@ -1,65 +1,32 @@
 package fit2drive.data.entities.employee.component;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
-import javax.swing.JScrollPane;
+import util.spring.gui.component.SController;
 
-import org.springframework.context.ApplicationEventPublisher;
+public class EmployeeController extends SController {
 
-import fit2drive.data.controller.AbstractController;
-
-public class EmployeeController extends AbstractController {
-
-	EmployeeModel model;
-	EmployeeDataView view;
-	ApplicationEventPublisher publisher;
-
-	private EmployeeController(
-			EmployeeModel model,
-			EmployeeDataView view) {
-		super();
-
-
+	final EmployeeModel model;
+	
+	final EmployeeDataView view;
+	
+	public EmployeeController(final EmployeeModel model, final EmployeeDataView view) {
+		super(view);
+		
 		this.model = model;
 		this.view = view;
-
-		// add button action listener
-		this.view.addBtnReadyActionListener(new createBtnAction());
-
-		JScrollPane jscrollPane = new JScrollPane(this.view);
-		//jscrollPane.add(view);
-		this.frame.add(jscrollPane);
 		
-		this.addWindowListener(new WindowAdapter() {
+		view.addBtnReadyActionListener(new ActionListener() {
+			
 			@Override
-			public void windowClosed(WindowEvent arg0) {
-				publisher.publishEvent(new EmployeeCloseEvent(null));
+			public void actionPerformed(ActionEvent e) {
+				model.saveEntity(view.getData());
 			}
 		});
 		
 	}
-
-
-	public EmployeeController(
-			EmployeeModel model2,
-			EmployeeDataView view2,
-			ApplicationEventPublisher publisher) {
-		this(model2, view2);
-		this.publisher = publisher;
-	}
-
-
-	public class createBtnAction implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			model.saveEntity(view.getData());
-		}
-	}
-
-	
 
 
 

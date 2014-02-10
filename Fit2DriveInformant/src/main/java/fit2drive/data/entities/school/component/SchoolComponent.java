@@ -21,14 +21,14 @@ public class SchoolComponent implements ApplicationListener<ApplicationEvent> {
 	public void onApplicationEvent(ApplicationEvent event) {
 		
 		if (event instanceof SchoolOpenEvent) {
-			createController();
+			openForm();
 		} else if (event instanceof SchoolCloseEvent) {
-			destroyController();
+			closeForm();
 		}
 		
 	}
 	
-	private void createController() {
+	private void openForm() {
 		if (controller == null) {
 			SchoolDataView view = new SchoolDataView();
 			SchoolModel model = new SchoolModel(dao);
@@ -44,7 +44,7 @@ public class SchoolComponent implements ApplicationListener<ApplicationEvent> {
 		}
 	}
 	
-	private void destroyController() {
+	private void closeForm() {
 		if (controller == null) {
 			System.out.println("Controller is already closed.");
 		} else if (controller != null && controller.isFormOpen()) {
