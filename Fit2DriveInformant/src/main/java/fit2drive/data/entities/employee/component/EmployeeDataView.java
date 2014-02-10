@@ -23,10 +23,7 @@ import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
  * @author derrick futschik
  */
 public class EmployeeDataView extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 	public EmployeeDataView() {
 		initComponents();
 	}

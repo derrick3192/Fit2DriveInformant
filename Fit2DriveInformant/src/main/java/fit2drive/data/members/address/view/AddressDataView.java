@@ -18,8 +18,6 @@ import fit2drive.data.members.address.AddressData;
  */
 public class AddressDataView extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-
 	public AddressDataView() {
 		initComponents();
 	}

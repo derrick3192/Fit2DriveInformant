@@ -15,11 +15,6 @@ import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
  * @author derrick futschik
  */
 public class AgreePanel extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	
 	public AgreePanel() {
 		initComponents();

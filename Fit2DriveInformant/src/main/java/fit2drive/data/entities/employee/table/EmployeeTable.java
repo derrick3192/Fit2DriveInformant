@@ -6,8 +6,6 @@ import fit2drive.data.entities.employee.dao.EmployeeDaoImp;
 
 public class EmployeeTable extends AbstractTableModel{
 
-	private static final long serialVersionUID = 1L;
-
 	EmployeeDaoImp dao;
 	
 	Object[][] rows;

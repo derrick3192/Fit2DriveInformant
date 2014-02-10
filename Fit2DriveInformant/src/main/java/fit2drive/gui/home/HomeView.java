@@ -19,11 +19,6 @@ public class HomeView extends JFrame {
 	private Map<Menuitems,JMenuItem> menuItems = new HashMap<>();
 	
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	final JMenuBar menuBar = new JMenuBar();
 	
 	
