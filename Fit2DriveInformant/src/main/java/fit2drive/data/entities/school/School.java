@@ -1,7 +1,6 @@
 package fit2drive.data.entities.school;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -15,7 +14,6 @@ import lombok.EqualsAndHashCode;
 
 
 @Entity
-@Table(name="Schools")
 @Data
 @EqualsAndHashCode(callSuper=false)
 public class School extends F2DEntity{

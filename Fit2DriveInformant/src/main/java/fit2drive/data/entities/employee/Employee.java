@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -27,7 +26,6 @@ import fit2drive.data.members.datafile.DataFile;
 @Entity
 @EqualsAndHashCode(callSuper=false)
 @Data
-@Table(name="Employee") 
 public class Employee extends F2DEntity {
 	
 	public Employee(){};

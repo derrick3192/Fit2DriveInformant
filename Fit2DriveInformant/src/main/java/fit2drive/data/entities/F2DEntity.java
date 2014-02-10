@@ -27,36 +27,5 @@ public abstract class F2DEntity {
 		return this.id;
 	}
 	
-//	public int getNoColumnsActive() {
-//		DataColumn[]columns = this.getColumns();
-//		int active = 0;
-//		for (DataColumn colomn : columns) {
-//			if (colomn.isShowing()) {
-//				active++;
-//			}
-//		}
-//		return active;
-//	}
-//	
-//	public abstract Object[] getRow();
-	
-//	public Object[] getRowForTable() {
-//		int noLocalColumns = this.getNoColumnsActive();
-//		Object[] localRow = new Object[noLocalColumns];
-//		
-//		Object[] globalRow = this.getRow();
-//		DataColumn[] dataColumns = this.getColumns();
-//		
-//		int localIndex = 0;
-//		for (int globalIndex=0; globalIndex<dataColumns.length; globalIndex++) {
-//			if (dataColumns[globalIndex].isShowing()) {
-//				localRow[localIndex] = globalRow[globalIndex];
-//				localIndex++;
-//			}
-//		}
-//		
-//		return localRow;
-//	}
-	
 
 }

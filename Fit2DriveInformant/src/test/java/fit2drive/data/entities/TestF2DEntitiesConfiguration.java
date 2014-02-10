@@ -13,8 +13,6 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.reflections.Reflections;
@@ -73,27 +71,27 @@ public class TestF2DEntitiesConfiguration {
 		}
 	}
 
-	@Test
-	public void entitiesShouldHaveTableName() {
-		
-		for (Class<?> entityClass : entityClasses) {
-			
-			Annotation[] annotationsOnClass = entityClass.getAnnotations();
-			boolean hasTableAnnotation = false;
-			for (Annotation annotation : annotationsOnClass) {
-				if(annotation instanceof Table){
-					hasTableAnnotation = true;
-					Table tableAnnoation = (Table) annotation;
-					assertTrue("Error, An entity which is not abstract did not have a table name in the "+Table.class.getName() +" annotation.\n"
-							+ "Please include this for the entity: "+ entityClass.getName(),
-							tableAnnoation.name().length() != 0);	
-				}
-			}
-			assertTrue("Error, An entity which is not abstract did not the "+Data.class.getName() +" annotation. \n"
-					+ "Please include this for the entity: "+ entityClass.getName(),
-					hasTableAnnotation);
-		}
-	}
+//	@Test
+//	public void entitiesShouldHaveTableName() {
+//		
+//		for (Class<?> entityClass : entityClasses) {
+//			
+//			Annotation[] annotationsOnClass = entityClass.getAnnotations();
+//			boolean hasTableAnnotation = false;
+//			for (Annotation annotation : annotationsOnClass) {
+//				if(annotation instanceof Table){
+//					hasTableAnnotation = true;
+//					Table tableAnnoation = (Table) annotation;
+//					assertTrue("Error, An entity which is not abstract did not have a table name in the "+Table.class.getName() +" annotation.\n"
+//							+ "Please include this for the entity: "+ entityClass.getName(),
+//							tableAnnoation.name().length() != 0);	
+//				}
+//			}
+//			assertTrue("Error, An entity which is not abstract did not the "+Data.class.getName() +" annotation. \n"
+//					+ "Please include this for the entity: "+ entityClass.getName(),
+//					hasTableAnnotation);
+//		}
+//	}
 	
 	
 	

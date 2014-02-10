@@ -4,7 +4,6 @@ package fit2drive.data.entities.feedback;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import fit2drive.data.entities.F2DEntity;
 import fit2drive.data.entities.school.School;
@@ -15,7 +14,6 @@ import lombok.EqualsAndHashCode;
 
 @Entity
 @Data
-@Table(name="Employee") 
 @EqualsAndHashCode(callSuper=false)
 public class Feedback extends F2DEntity{
 	
