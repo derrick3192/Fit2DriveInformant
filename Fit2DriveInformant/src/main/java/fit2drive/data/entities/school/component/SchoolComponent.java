@@ -1,60 +1,31 @@
 package fit2drive.data.entities.school.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEvent;
-import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.context.ApplicationListener;
 
+import util.spring.gui.component.SComponent;
+import util.spring.gui.component.SController;
 import fit2drive.data.entities.school.dao.SchoolDao;
 
-public class SchoolComponent implements ApplicationListener<ApplicationEvent> {
+public class SchoolComponent extends SComponent {
 	
 	@Autowired
 	SchoolDao dao;
 	
-	@Autowired
-	ApplicationEventPublisher publisher;
-	
-	SchoolController controller = null;
+	@Override
+	protected SController createController() {
+		return new SchoolController(new SchoolModel(dao), new SchoolDataView());
+	}
 
 	@Override
-	public void onApplicationEvent(ApplicationEvent event) {
-		
-		if (event instanceof SchoolOpenEvent) {
-			openForm();
-		} else if (event instanceof SchoolCloseEvent) {
-			closeForm();
-		}
-		
+	protected Class<?> closeClass() {
+		return SchoolCloseEvent.class;
+	}
+
+	@Override
+	protected Class<?> openClass() {
+		return SchoolOpenEvent.class;
 	}
 	
-	private void openForm() {
-		if (controller == null) {
-			SchoolDataView view = new SchoolDataView();
-			SchoolModel model = new SchoolModel(dao);
-			this.controller = new SchoolController(model, view, publisher);
-			controller.run();
-			return;
-		} else if (controller != null && controller.isFormOpen()) {
-			System.out.println("Form already open.");
-			return;
-		} else if(controller != null && !controller.isFormOpen()) {
-			this.controller.setVisible();
-			return;
-		}
-	}
-	
-	private void closeForm() {
-		if (controller == null) {
-			System.out.println("Controller is already closed.");
-		} else if (controller != null && controller.isFormOpen()) {
-			controller.displose();
-			controller = null;
-		} else if(controller != null && !controller.isFormOpen()) {
-			controller.displose();
-			controller = null;
-		}
-	}
-	
+
 
 }

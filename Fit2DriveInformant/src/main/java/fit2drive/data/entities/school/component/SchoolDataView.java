@@ -20,10 +20,8 @@ import fit2drive.data.members.address.view.*;
  * @author derrick futschik
  */
 public class SchoolDataView extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+	
 	public SchoolDataView() {
 		initComponents();
 	}
