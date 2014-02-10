@@ -11,7 +11,6 @@ import org.hibernate.Session;
 import fit2drive.data.dao.DaoImp;
 import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
-import fit2drive.data.tables.DataColumn;
 
 
 public class EmployeeDaoImp extends DaoImp<Employee> implements EmployeeDao {
@@ -46,17 +45,11 @@ public class EmployeeDaoImp extends DaoImp<Employee> implements EmployeeDao {
 	}
 	
 	
-
 	@Override
 	public Class<Employee> getEntityClass() {
 		return Employee.class;
 	}
 
-	@Override
-	protected DataColumn[] createDataColumns() {
-		// TODO Auto-generated method stub
-		return new DataColumn[]{new DataColumn(Integer.class, "sdfds", true)};
-	}
 	
 	public Employee createInstance(EmployeeData data) {
 		return Employee.createInstance(data);
