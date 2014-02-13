@@ -1,18 +1,20 @@
 package util.spring.gui.component;
 
 import fit2drive.data.dao.Dao;
+import fit2drive.data.entities.F2DEntity;
 
-public class SModel<DATA> implements SIModel<DATA> {
+public class SModel<ENITY extends F2DEntity, DATA> implements SIModel<DATA> {
 
-	final Dao dao;
+	final Dao<ENITY, DATA> dao;
 	
 	@Override
 	public void saveEntity(DATA data) {
-		// TODO Auto-generated method stub
-		
+		//ENITY entity = dao.createEntity(data);
+		//dao.save(entity);
+		System.out.println("Create New Entity");
 	}
 	
-	public SModel(Dao dao) {
+	public SModel(Dao<ENITY, DATA> dao) {
 		this.dao = dao;
 	}
 
