@@ -7,9 +7,17 @@ import org.springframework.context.ApplicationListener;
 
 
 
-public abstract class SComponent
-	implements ApplicationListener<ApplicationEvent> {
-	
+/**
+ * @author Derrick
+ * 
+ * 
+ * Class for wrapping controllers into the Spring Framework. This decouples GUI forms from one
+ * another.
+ *
+ */
+public abstract class SComponent implements ApplicationListener<ApplicationEvent> {
+
+	/** Controller of the component **/
 	private SController controller;
 	
 	@Autowired
@@ -17,7 +25,7 @@ public abstract class SComponent
 	
 	protected abstract SController createController();
 	
-	
+	/** Open the form if it is not already open. Or make the form visible if it is hidden. **/
 	protected void openForm() {
 		if (controller == null) {
 			this.controller = createController();
@@ -35,6 +43,7 @@ public abstract class SComponent
 		}
 	}
 	
+	/** Close the Form and help dispose of resources. **/
 	protected void closeForm() {
 		if (controller == null) {
 			System.out.println("Controller is already closed.");
@@ -47,8 +56,10 @@ public abstract class SComponent
 		}
 	}
 	
-	// open and close events;
-	protected abstract Class<?> closeClass();	
+	/** Class of the ApplicationEvent which will invoke the <c>close()</c> method on this form. **/
+	protected abstract Class<?> closeClass();
+	
+	/** Class of the ApplicationEvent which will invoke the <c>open()</c> method on this form. **/
 	protected abstract Class<?> openClass();
 	
 	@Override
