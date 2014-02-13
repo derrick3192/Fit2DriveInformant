@@ -1,11 +1,11 @@
 package fit2drive.data.entities.school.component;
 
-import util.spring.gui.component.SModel;
+import util.spring.gui.component.SIModel;
 import fit2drive.data.entities.school.School;
 import fit2drive.data.entities.school.SchoolData;
 import fit2drive.data.entities.school.dao.SchoolDao;
 
-public class SchoolModel implements SModel<SchoolData> {
+public class SchoolModel implements SIModel<SchoolData> {
 	
 	SchoolDao dao;
 	

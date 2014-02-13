@@ -4,9 +4,9 @@ package fit2drive.data.entities.employee.component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import util.spring.gui.component.SController;
+import util.spring.gui.component.SIController;
 
-public class EmployeeController extends SController {
+public class EmployeeController extends SIController {
 
 	final EmployeeModel model;
 	

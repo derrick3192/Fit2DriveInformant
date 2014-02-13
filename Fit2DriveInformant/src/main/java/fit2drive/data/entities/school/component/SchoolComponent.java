@@ -3,7 +3,7 @@ package fit2drive.data.entities.school.component;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import util.spring.gui.component.SComponent;
-import util.spring.gui.component.SController;
+import util.spring.gui.component.SIController;
 import fit2drive.data.entities.school.dao.SchoolDao;
 
 public class SchoolComponent extends SComponent {
@@ -12,7 +12,7 @@ public class SchoolComponent extends SComponent {
 	SchoolDao dao;
 	
 	@Override
-	protected SController createController() {
+	protected SIController createController() {
 		return new SchoolController(new SchoolModel(dao), new SchoolDataView());
 	}
 

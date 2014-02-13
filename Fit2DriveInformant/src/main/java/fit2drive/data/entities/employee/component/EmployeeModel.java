@@ -1,11 +1,11 @@
 package fit2drive.data.entities.employee.component;
 
-import util.spring.gui.component.SModel;
+import util.spring.gui.component.SIModel;
 import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
 import fit2drive.data.entities.employee.dao.EmployeeDao;
 
-public class EmployeeModel implements SModel<EmployeeData> {
+public class EmployeeModel implements SIModel<EmployeeData> {
 	
 	EmployeeDao dao;
 	

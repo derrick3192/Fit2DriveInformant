@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 
 import util.spring.gui.component.SComponent;
-import util.spring.gui.component.SController;
+import util.spring.gui.component.SIController;
 import fit2drive.data.entities.employee.dao.EmployeeDao;
 
 
@@ -19,7 +19,7 @@ public class EmployeeComponent extends SComponent {
 
 
 	@Override
-	protected SController createController() {
+	protected SIController createController() {
 		return new EmployeeController(new EmployeeModel(dao), new EmployeeDataView());
 	}
 

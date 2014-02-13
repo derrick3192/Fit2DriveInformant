@@ -8,7 +8,7 @@ package util.spring.gui.component;
  *
  * Model to be used with the SComponent Configuration.
  */
-public interface SModel<Data> {
+public interface SIModel<Data> {
 	
 	/** Method to save the entity **/
 	public void saveEntity(Data data);

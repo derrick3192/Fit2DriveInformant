@@ -18,12 +18,12 @@ import org.springframework.context.ApplicationListener;
 public abstract class SComponent implements ApplicationListener<ApplicationEvent> {
 
 	/** Controller of the component **/
-	private SController controller;
+	private SIController controller;
 	
 	@Autowired
 	ApplicationEventPublisher publisher;
 	
-	protected abstract SController createController();
+	protected abstract SIController createController();
 	
 	/** Open the form if it is not already open. Or make the form visible if it is hidden. **/
 	protected void openForm() {

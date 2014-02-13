@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * Class which is a controller.
  *
  */
-public interface SView<Data> {
+public interface SIView<Data> {
 	
 	/** Get the input data **/
 	public Data getData();

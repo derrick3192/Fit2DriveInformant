@@ -5,9 +5,9 @@ package fit2drive.gui.home;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import util.spring.gui.component.SController;
+import util.spring.gui.component.SIController;
 
-public class HomeController extends SController{
+public class HomeController extends SIController{
 	
 	final HomeModel model;
 
