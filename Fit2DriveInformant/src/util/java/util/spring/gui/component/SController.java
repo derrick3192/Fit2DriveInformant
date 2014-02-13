@@ -3,6 +3,8 @@ package util.spring.gui.component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JPanel;
+
 public abstract class SController<DATA, MODEL extends SIModel<DATA>, VIEW extends SIView<DATA>> extends SBaseController {
 
 	
@@ -11,6 +13,8 @@ public abstract class SController<DATA, MODEL extends SIModel<DATA>, VIEW extend
 	final VIEW view;
 	
 	public SController(final MODEL model, final VIEW view) {
+		super((JPanel)view);
+		
 		
 		this.model = model;
 		this.view = view;
