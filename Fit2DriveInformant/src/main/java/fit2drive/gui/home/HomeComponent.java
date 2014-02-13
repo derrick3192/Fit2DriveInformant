@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 
 import util.spring.gui.component.SComponent;
-import util.spring.gui.component.SIController;
+import util.spring.gui.component.SBaseController;
 
 public class HomeComponent extends SComponent{
 	
@@ -13,7 +13,7 @@ public class HomeComponent extends SComponent{
 	ApplicationEventPublisher publisher;
 	
 	@Override
-	protected SIController createController() {
+	protected SBaseController createController() {
 		return new HomeController(new HomeView(), new HomeModel(publisher));
 	}
 

@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  * Controller with basic functionality already coded.
  *
  */
-public abstract class SIController {
+public abstract class SBaseController {
 
 	/** Frame which the controller controls. **/
 	JFrame frame = new JFrame();
@@ -24,12 +24,12 @@ public abstract class SIController {
 	 * 
 	 * @param frame - view parsed to the controller.
 	 */
-	public SIController(JFrame frame) {
+	public SBaseController(JFrame frame) {
 		this.frame = frame;
 		initComponents();
 	}
 	
-	public SIController() {
+	public SBaseController() {
 		initComponents();
 	}
 	
@@ -38,7 +38,7 @@ public abstract class SIController {
 	 * 
 	 * @param panel - view parsed to the Controller.
 	 */
-	public SIController(JPanel panel) {
+	public SBaseController(JPanel panel) {
 		this.frame.add(panel);
 		initComponents();
 	}
