@@ -6,6 +6,7 @@ import java.util.Date;
 
 import fit2drive.data.DaoImpTest;
 import fit2drive.data.entities.employee.Employee;
+import fit2drive.data.entities.employee.EmployeeData;
 import fit2drive.data.entities.employee.dao.EmployeeDaoImp;
 import fit2drive.data.members.address.Address;
 import fit2drive.data.members.datafile.DataFile;
@@ -15,7 +16,7 @@ import org.junit.Test;
 
 import resource.ResourceLoaderTestResources;
 
-public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeDaoImp> {
+public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeData, EmployeeDaoImp> {
 	
 	private static final String picturePathValid 	= ResourceLoaderTestResources.getImagePath(ResourceLoaderTestResources.ListFiles.TESTPICTURE);
 	private static final String pictureFileName 	= "Penguin2";

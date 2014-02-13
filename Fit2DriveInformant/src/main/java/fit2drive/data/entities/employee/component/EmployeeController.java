@@ -7,13 +7,9 @@ import util.spring.gui.component.SController;
 
 public class EmployeeController extends SController<EmployeeData, EmployeeModel, EmployeeDataView> {
 
-	
 	public EmployeeController(final EmployeeModel model, final EmployeeDataView view) {
 		super(model, view);
 
 	}
-
-
-
 
 }
