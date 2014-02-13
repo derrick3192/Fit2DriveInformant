@@ -11,11 +11,11 @@ import fit2drive.data.dao.Dao;
 import fit2drive.data.entities.F2DEntity;
 
 
-public abstract class DaoImpTest<E extends F2DEntity, DATA, D extends Dao<E, DATA>> extends ApplicationContextAwareTest  {
+public abstract class DaoImpTest<Entity extends F2DEntity, DATA, D extends Dao<Entity, DATA>> extends ApplicationContextAwareTest  {
 
 
 
-	public abstract E createValidEntity();
+	public abstract Entity createValidEntity();
 	
 	/** DAO being tested **/
 	@Autowired(required=true)
@@ -27,7 +27,7 @@ public abstract class DaoImpTest<E extends F2DEntity, DATA, D extends Dao<E, DAT
 	@Test
 	public void testGetValidEntity() {
 		try {
-			E entity = createValidEntity();
+			Entity entity = createValidEntity();
 			if (entity == null) {
 				fail("the method DaoImpTest.createValidEntity() returned null, please recode the method in the test");
 			}
@@ -48,7 +48,7 @@ public abstract class DaoImpTest<E extends F2DEntity, DATA, D extends Dao<E, DAT
 	@Test
 	public void testCreateAndDelete() {
 
-		E entity = createValidEntity();
+		Entity entity = createValidEntity();
 
 		int initialEntityCount = dao.getCount();
 

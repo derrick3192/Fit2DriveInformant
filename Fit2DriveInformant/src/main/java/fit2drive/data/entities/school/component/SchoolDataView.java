@@ -28,8 +28,8 @@ public class SchoolDataView extends JPanel implements SIView<SchoolData> {
 		initComponents();
 	}
 	
-	public void addBtnReadyActionListener(ActionListener createBtnAction) {
-		
+	public void addBtnReadyActionListener(ActionListener al) {
+		this.agreePanel1.addBtnReadyActionListener(al);
 	}
 	
 	

@@ -5,9 +5,13 @@
 package fit2drive.data.entities.view;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import javax.swing.border.*;
+
 import com.jgoodies.forms.factories.*;
+
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
@@ -18,6 +22,10 @@ public class AgreePanel extends JPanel {
 	
 	public AgreePanel() {
 		initComponents();
+	}
+	
+	public void addBtnReadyActionListener(ActionListener al) {
+		this.btnReady.addActionListener(al);
 	}
 
 	private void initComponents() {
