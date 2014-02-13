@@ -13,9 +13,9 @@ import fit2drive.data.entities.F2DEntity;
  * 
  * Basic Dao which all Dao's should extend
  *
- * @param <T> class of the enity the Dao managers
+ * @param <ENTITY> class of the enity the Dao managers
  */
-public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
+public abstract class  DaoImp<ENTITY extends F2DEntity, DATA> implements Dao<ENTITY, DATA> {
 
 
 
@@ -24,7 +24,7 @@ public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
 	protected HSessionFactory sessionFactory;
 	
 	
-	public void save(T entity) {
+	public void save(ENTITY entity) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(entity);
@@ -32,7 +32,7 @@ public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
 		session.close();
 	}
 	
-	public void update(T entity) {
+	public void update(ENTITY entity) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.update(entity);
@@ -40,7 +40,7 @@ public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
 		session.close();
 	}
 
-	public void delete(T entity) {
+	public void delete(ENTITY entity) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.delete(entity);
@@ -55,12 +55,12 @@ public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
 	 * @param cls
 	 * @return
 	 */
-	private T get(int id, Class<?> cls) {
+	private ENTITY get(int id, Class<?> cls) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
 		@SuppressWarnings("unchecked")
-		T t = (T) session.get(cls, id);
+		ENTITY t = (ENTITY) session.get(cls, id);
 		
 		session.close();
 		
@@ -72,17 +72,17 @@ public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
 	 * 
 	 * @return Class which extends DaoImp
 	 */
-	public abstract Class<T> getEntityClass();
+	public abstract Class<ENTITY> getEntityClass();
 	
 	
 	@Override
-	public T get(int id) {
+	public ENTITY get(int id) {
 		return this.get(id, getEntityClass());
 	}
 	
 	
 	@Override
-	public List<T> getAll() {
+	public List<ENTITY> getAll() {
 		
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -90,7 +90,7 @@ public abstract class  DaoImp<T extends F2DEntity> implements Dao<T> {
 		Criteria criteria = session.createCriteria(getEntityClass());
 		
 		@SuppressWarnings("unchecked")
-		List<T> entities = criteria.list();
+		List<ENTITY> entities = criteria.list();
 		session.getTransaction().commit();
 		session.close();
 		

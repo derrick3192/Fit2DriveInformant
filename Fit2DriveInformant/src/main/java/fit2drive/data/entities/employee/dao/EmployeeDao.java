@@ -7,7 +7,7 @@ import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
 
 
-public interface EmployeeDao extends Dao<Employee> {
+public interface EmployeeDao extends Dao<Employee,EmployeeData> {
 	
 	/** get an employee with all of its members loaded **/
 	public Employee getInitialized(int id);
@@ -15,7 +15,5 @@ public interface EmployeeDao extends Dao<Employee> {
 	/** Get the image of an employee with the given ID **/
 	public Image getImageFromEmployeeID(int id);
 	
-	/** create an instance of employee data **/
-	public Employee createInstance(EmployeeData data);
 
 }

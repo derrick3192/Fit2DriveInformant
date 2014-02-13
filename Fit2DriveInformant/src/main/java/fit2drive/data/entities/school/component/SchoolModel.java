@@ -14,7 +14,7 @@ public class SchoolModel implements SIModel<SchoolData> {
 	}
 	
 	public void saveEntity(SchoolData data) {
-		School school = dao.createInstance(data);
+		School school = dao.createEntity(data);
 		dao.save(school);
 	}
 

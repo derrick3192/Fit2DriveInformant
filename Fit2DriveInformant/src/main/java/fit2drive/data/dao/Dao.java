@@ -9,29 +9,29 @@ import fit2drive.data.entities.F2DEntity;
  * 
  * Most basic behavior of a Dao
  *
- * @param <T>
+ * @param <ENTITY>
  */
-public interface Dao<T extends F2DEntity> {
+public interface Dao<ENTITY extends F2DEntity, DATA> {
 
 	/**
 	 * This method should save the entity
 	 * @param entity
 	 */
-	public void save(T entity);
+	public void save(ENTITY entity);
 	
 	
 	/**
 	 * This method should delete the entity
 	 * @param entity
 	 */
-	public void delete(T entity);
+	public void delete(ENTITY entity);
 	
 	
 	/**
 	 * This method should update the entity
 	 * @param entity
 	 */
-	public void update(T entity);
+	public void update(ENTITY entity);
 	
 	
 	
@@ -40,7 +40,7 @@ public interface Dao<T extends F2DEntity> {
 	 * @param id - id of the entity
 	 * @return
 	 */
-	public T get(int id);
+	public ENTITY get(int id);
 
 
 	/**
@@ -48,7 +48,7 @@ public interface Dao<T extends F2DEntity> {
 	 * 
 	 * @return All Entities
 	 */
-	List<T> getAll();
+	List<ENTITY> getAll();
 	
 	
 	
@@ -58,4 +58,16 @@ public interface Dao<T extends F2DEntity> {
 	 * @return number of entities
 	 */
 	int getCount();
+	
+	
+	
+	
+	
+	/**
+	 * Method to create a new entity given some user input.
+	 * 
+	 * @param data - user input to create the entity
+	 * @return new Entity from the data
+	 */
+	public ENTITY createEntity(DATA data);
 }

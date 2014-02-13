@@ -13,7 +13,7 @@ import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
 
 
-public class EmployeeDaoImp extends DaoImp<Employee> implements EmployeeDao {
+public class EmployeeDaoImp extends DaoImp<Employee, EmployeeData> implements EmployeeDao {
 	public EmployeeDaoImp() {	
 	}
 	
@@ -51,8 +51,11 @@ public class EmployeeDaoImp extends DaoImp<Employee> implements EmployeeDao {
 	}
 
 	
-	public Employee createInstance(EmployeeData data) {
+	@Override
+	public Employee createEntity(EmployeeData data) {
 		return Employee.createInstance(data);
 	}
+
+
 	
 }

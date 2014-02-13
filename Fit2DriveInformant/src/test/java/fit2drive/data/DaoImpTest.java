@@ -10,7 +10,7 @@ import fit2drive.ApplicationContextAwareTest;
 import fit2drive.data.dao.Dao;
 import fit2drive.data.entities.F2DEntity;
 
-public abstract class DaoImpTest<E extends F2DEntity, D extends Dao<E>> extends ApplicationContextAwareTest  {
+public abstract class DaoImpTest<E extends F2DEntity, D extends Dao> extends ApplicationContextAwareTest  {
 
 
 

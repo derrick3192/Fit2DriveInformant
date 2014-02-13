@@ -4,7 +4,7 @@ import fit2drive.data.dao.DaoImp;
 import fit2drive.data.entities.school.School;
 import fit2drive.data.entities.school.SchoolData;
 
-public class SchoolDaoImp extends DaoImp<School> implements SchoolDao {
+public class SchoolDaoImp extends DaoImp<School, SchoolData> implements SchoolDao {
 
 	@Override
 	public Class<School> getEntityClass() {
@@ -13,7 +13,7 @@ public class SchoolDaoImp extends DaoImp<School> implements SchoolDao {
 
 
 	@Override
-	public School createInstance(SchoolData data) {
+	public School createEntity(SchoolData data) {
 		return School.createInstance(data);
 	}
 

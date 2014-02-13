@@ -14,7 +14,7 @@ public class EmployeeModel implements SIModel<EmployeeData> {
 	}
 	
 	public void saveEntity(EmployeeData data) {
-		Employee employee = dao.createInstance(data);
+		Employee employee = dao.createEntity(data);
 		dao.save(employee);
 	}
 	
