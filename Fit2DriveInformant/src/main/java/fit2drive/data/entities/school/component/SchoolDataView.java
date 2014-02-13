@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import util.spring.gui.component.SView;
+
 import com.jgoodies.forms.factories.*;
 
 import fit2drive.data.entities.school.SchoolData;
@@ -19,7 +21,7 @@ import fit2drive.data.members.address.view.*;
 /**
  * @author derrick futschik
  */
-public class SchoolDataView extends JPanel {
+public class SchoolDataView extends JPanel implements SView<SchoolData> {
 
 	
 	public SchoolDataView() {

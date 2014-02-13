@@ -19,10 +19,12 @@ import fit2drive.data.members.address.view.*;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 
+import util.spring.gui.component.SView;
+
 /**
  * @author derrick futschik
  */
-public class EmployeeDataView extends JPanel {
+public class EmployeeDataView extends JPanel implements SView<EmployeeData> {
 
 	public EmployeeDataView() {
 		initComponents();
