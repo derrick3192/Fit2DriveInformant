@@ -12,8 +12,8 @@ public abstract class SComponent<ENTITY extends F2DEntity, DATA> extends SBaseCo
 	Dao<ENTITY, DATA> dao;
 	
 	public SComponent(
-			Class<ApplicationEvent> open, 
-			Class<ApplicationEvent> close,
+			Class open, 
+			Class close,
 			Dao<ENTITY, DATA> dao) {
 		this.open = open;
 		this.close = close;
