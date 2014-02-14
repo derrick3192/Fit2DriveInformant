@@ -1,76 +1,45 @@
 package util.spring.gui.component;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
-import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.context.ApplicationListener;
 
+import fit2drive.data.dao.Dao;
+import fit2drive.data.entities.F2DEntity;
 
+public abstract class SComponent<ENTITY extends F2DEntity, DATA> extends SBaseComponent {
 
-/**
- * @author Derrick
- * 
- * 
- * Class for wrapping controllers into the Spring Framework. This decouples GUI forms from one
- * another.
- *
- */
-public abstract class SComponent implements ApplicationListener<ApplicationEvent> {
-
-	/** Controller of the component **/
-	private SBaseController controller;
+	Class<ApplicationEvent> open;
+	Class<ApplicationEvent> close;
+	Dao<ENTITY, DATA> dao;
 	
-	@Autowired
-	ApplicationEventPublisher publisher;
-	
-	protected abstract SBaseController createController();
-	
-	/** Open the form if it is not already open. Or make the form visible if it is hidden. **/
-	protected void openForm() {
-		if (controller == null) {
-			this.controller = createController();
-			this.controller.run();
-			this.controller.focusFrame();
-			return;
-		} else if (controller != null && controller.isFormOpen()) {
-			System.out.println("Form already open");
-			this.controller.focusFrame();
-			return;
-		} else if (controller != null && !controller.isFormOpen()) {
-			this.controller.setVisible();
-			this.controller.focusFrame();
-			return;
-		}
+	public SComponent(
+			Class<ApplicationEvent> open, 
+			Class<ApplicationEvent> close,
+			Dao<ENTITY, DATA> dao) {
+		this.open = open;
+		this.close = close;
+		this.dao = dao;
 	}
-	
-	/** Close the Form and help dispose of resources. **/
-	protected void closeForm() {
-		if (controller == null) {
-			System.out.println("Controller is already closed.");
-		} else if (controller != null && controller.isFormOpen()) {
-			controller.dispose();
-			controller = null;
-		} else if (controller != null && !controller.isFormOpen()) {
-			controller.dispose();
-			controller = null;
-		}
-	}
-	
-	/** Class of the ApplicationEvent which will invoke the <c>close()</c> method on this form. **/
-	protected abstract Class<?> closeClass();
-	
-	/** Class of the ApplicationEvent which will invoke the <c>open()</c> method on this form. **/
-	protected abstract Class<?> openClass();
 	
 	@Override
-	final public void onApplicationEvent(ApplicationEvent event) {
-		
-		if (event.getClass() == openClass()) {
-			openForm();
-			return;
-		} else if(event.getClass() == closeClass()) {
-			closeForm();
-			return;
-		}
+	protected SBaseController createController() {
+		return new SController<DATA, SIModel<DATA>, SIView<DATA>>(createModel(), createView()) {
+		};
 	}
+	
+	protected SModel<ENTITY, DATA> createModel() {
+		return new SModel<ENTITY, DATA>(dao);
+	}
+	
+	abstract protected SIView<DATA> createView();
+
+	@Override
+	protected Class<?> closeClass() {
+		return this.close;
+	}
+
+	@Override
+	protected Class<?> openClass() {
+		return this.open;
+	}
+
 }

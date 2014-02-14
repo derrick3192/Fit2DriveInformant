@@ -3,13 +3,13 @@ package fit2drive.data.entities.employee.component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 
-import util.spring.gui.component.SComponent;
+import util.spring.gui.component.SBaseComponent;
 import util.spring.gui.component.SBaseController;
 import fit2drive.data.entities.employee.dao.EmployeeDao;
 
 
 
-public class EmployeeComponent extends SComponent {
+public class EmployeeComponent extends SBaseComponent {
 	
 	@Autowired
 	EmployeeDao dao;

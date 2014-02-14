@@ -2,11 +2,11 @@ package fit2drive.data.entities.school.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import util.spring.gui.component.SComponent;
+import util.spring.gui.component.SBaseComponent;
 import util.spring.gui.component.SBaseController;
 import fit2drive.data.entities.school.dao.SchoolDao;
 
-public class SchoolComponent extends SComponent {
+public class SchoolComponent extends SBaseComponent {
 	
 	@Autowired
 	SchoolDao dao;
