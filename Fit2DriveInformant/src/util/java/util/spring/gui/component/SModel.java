@@ -14,20 +14,20 @@ public class SModel<ENITY extends F2DEntity, DATA> implements SIModel<DATA> {
 	}
 	
 	@Override
-	public boolean saveEntity(DATA data) throws ModelSavingException {
+	public boolean saveEntity(DATA data) throws SModelSavingException {
 		
 		ENITY entity =null;
 		
 		try {
 			entity = dao.createEntity(data);
 		} catch (Exception e) {
-			throw new ModelSavingException("Instantiation Error + Error message: \n\n ---" +e.getMessage(), EXCEPTIONCREATING);
+			throw new SModelSavingException("Instantiation Error + Error message: \n\n ---" +e.getMessage(), EXCEPTIONCREATING);
 		}
 		
 		try {
 		dao.save(entity);
 		} catch (Exception e) {
-			throw new ModelSavingException("Saving Error + Error message: \n\n ---" +e.getMessage(), EXCEPTIONSAVING);
+			throw new SModelSavingException("Saving Error + Error message: \n\n ---" +e.getMessage(), EXCEPTIONSAVING);
 		}
 		
 		return true;

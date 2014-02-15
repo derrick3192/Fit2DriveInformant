@@ -11,6 +11,6 @@ package util.spring.gui.component;
 public interface SIModel<Data> {
 	
 	/** Method to save the entity **/
-	public boolean saveEntity(Data data) throws ModelSavingException;
+	public boolean saveEntity(Data data) throws SModelSavingException;
 
 }

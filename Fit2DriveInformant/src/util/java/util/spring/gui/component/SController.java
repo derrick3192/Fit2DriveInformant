@@ -33,7 +33,7 @@ public abstract class SController<DATA, MODEL extends SIModel<DATA>, VIEW extend
 								"Created Entity",
 								JOptionPane.INFORMATION_MESSAGE);
 					}
-				} catch (ModelSavingException e1) {
+				} catch (SModelSavingException e1) {
 					
 					JOptionPane.showMessageDialog(null,
 							e1.getMessage(),
