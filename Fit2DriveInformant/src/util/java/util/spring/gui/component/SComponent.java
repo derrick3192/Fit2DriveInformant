@@ -11,6 +11,9 @@ public abstract class SComponent<ENTITY extends F2DEntity, DATA> extends SBaseCo
 	Class<ApplicationEvent> close;
 	Dao<ENTITY, DATA> dao;
 	
+	
+	// Limitation of java generics means there are unchecked warningings.
+	@SuppressWarnings({ "rawtypes", "unchecked" }) 
 	public SComponent(
 			Class open, 
 			Class close,
