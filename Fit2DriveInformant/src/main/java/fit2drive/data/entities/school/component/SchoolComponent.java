@@ -1,31 +1,34 @@
 package fit2drive.data.entities.school.component;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 
-import util.spring.gui.component.SBaseComponent;
-import util.spring.gui.component.SBaseController;
+import util.spring.gui.component.SComponent;
+import util.spring.gui.component.SIView;
+import fit2drive.data.dao.Dao;
+import fit2drive.data.entities.school.School;
+import fit2drive.data.entities.school.SchoolData;
 import fit2drive.data.entities.school.dao.SchoolDao;
 
-public class SchoolComponent extends SBaseComponent {
+public class SchoolComponent extends SComponent<School, SchoolData> {
+
 	
 	@Autowired
-	SchoolDao dao;
-	
-	@Override
-	protected SBaseController createController() {
-		return new SchoolController(new SchoolModel(dao), new SchoolDataView());
-	}
-
-	@Override
-	protected Class<?> closeClass() {
-		return SchoolCloseEvent.class;
-	}
-
-	@Override
-	protected Class<?> openClass() {
-		return SchoolOpenEvent.class;
+	public SchoolComponent(SchoolDao dao) {
+		this(SchoolOpenEvent.class, SchoolCloseEvent.class, dao);
 	}
 	
+	
+	public SchoolComponent(Class<SchoolOpenEvent> open, Class<SchoolCloseEvent> close, Dao<School, SchoolData> dao) {
+		super(open, close, dao);
+	}
 
+
+	@Override
+	protected SIView<SchoolData> createView() {
+		return new SchoolDataView();
+	}
+
+	
 
 }
