@@ -2,8 +2,9 @@ package fit2drive.gui.home;
 
 import org.springframework.context.ApplicationEventPublisher;
 
-import fit2drive.data.entities.employee.component.EmployeeOpenEvent;
-import fit2drive.data.entities.school.component.SchoolOpenEvent;
+import util.spring.gui.component.SEventType;
+import util.spring.gui.component.SComponentEvent;
+import util.spring.gui.component.SComponentType;
 
 public class HomeModel {
 	
@@ -15,12 +16,12 @@ public class HomeModel {
 	}
 	
 	public void publishEmployeeOpenEvent() {
-		publisher.publishEvent(new EmployeeOpenEvent(this));
+		publisher.publishEvent(new SComponentEvent(this, SComponentType.EMPLOYEE, SEventType.OPENING));
 	}
 	
 	
 	public void publishSchoolOpenEvent() {
-		publisher.publishEvent(new SchoolOpenEvent(this));
+		publisher.publishEvent(new SComponentEvent(this, SComponentType.EMPLOYEE, SEventType.OPENING));
 	}
 	
 }

@@ -3,7 +3,9 @@ package fit2drive;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 
-import fit2drive.gui.home.HomeOpenEvent;
+import util.spring.gui.component.SEventType;
+import util.spring.gui.component.SComponentEvent;
+import util.spring.gui.component.SComponentType;
 
 public class LauncherBean {
 
@@ -11,7 +13,7 @@ public class LauncherBean {
 	ApplicationEventPublisher publisher;
 
 	public void start() {
-		this.publisher.publishEvent(new HomeOpenEvent(this));
+		this.publisher.publishEvent(new SComponentEvent(this, SComponentType.HOME, SEventType.OPENING));
 	}
 
 }

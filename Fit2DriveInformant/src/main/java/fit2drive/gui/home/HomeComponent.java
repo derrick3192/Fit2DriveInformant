@@ -5,26 +5,21 @@ import org.springframework.context.ApplicationEventPublisher;
 
 import util.spring.gui.component.SBaseComponent;
 import util.spring.gui.component.SBaseController;
+import util.spring.gui.component.SComponentType;
 
 public class HomeComponent extends SBaseComponent{
 	
 	
+	public HomeComponent() {
+		super(SComponentType.HOME);
+	}
+
 	@Autowired
 	ApplicationEventPublisher publisher;
 	
 	@Override
 	protected SBaseController createController() {
 		return new HomeController(new HomeView(), new HomeModel(publisher));
-	}
-
-	@Override
-	protected Class<?> closeClass() {
-		return HomeCloseEvent.class;
-	}
-
-	@Override
-	protected Class<?> openClass() {
-		return HomeOpenEvent.class;
 	}
 
 }

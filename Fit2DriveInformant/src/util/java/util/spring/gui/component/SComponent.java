@@ -1,25 +1,16 @@
 package util.spring.gui.component;
 
-import org.springframework.context.ApplicationEvent;
-
 import fit2drive.data.dao.Dao;
 import fit2drive.data.entities.F2DEntity;
 
 public abstract class SComponent<ENTITY extends F2DEntity, DATA> extends SBaseComponent {
 
-	Class<ApplicationEvent> open;
-	Class<ApplicationEvent> close;
 	Dao<ENTITY, DATA> dao;
 	
-	
-	// Limitation of java generics means there are unchecked warningings.
-	@SuppressWarnings({ "rawtypes", "unchecked" }) 
 	public SComponent(
-			Class open, 
-			Class close,
-			Dao<ENTITY, DATA> dao) {
-		this.open = open;
-		this.close = close;
+			Dao<ENTITY, DATA> dao,
+			SComponentType componentType) {
+		super(componentType);
 		this.dao = dao;
 	}
 	
@@ -34,15 +25,5 @@ public abstract class SComponent<ENTITY extends F2DEntity, DATA> extends SBaseCo
 	}
 	
 	abstract protected SIView<DATA> createView();
-
-	@Override
-	protected Class<?> closeClass() {
-		return this.close;
-	}
-
-	@Override
-	protected Class<?> openClass() {
-		return this.open;
-	}
 
 }
