@@ -16,11 +16,11 @@
 	<!-- For using AspectJ -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 
+	<!-- Publisher Bean -->
+	<bean id="sPublisher" class="util.spring.gui.publisher.SPublisher" />
 	
 	<!-- LAUNCHER BEAN -->
 	<bean id="mainBean" class="fit2drive.LauncherBean" />
-	
-	
 	
 	
 	<!-- DAO -->

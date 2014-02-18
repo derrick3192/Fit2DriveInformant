@@ -1,27 +1,25 @@
 package fit2drive.gui.home;
 
-import org.springframework.context.ApplicationEventPublisher;
 
-import util.spring.gui.component.SEventType;
-import util.spring.gui.component.SComponentEvent;
-import util.spring.gui.component.SComponentType;
+import util.spring.gui.publisher.SComponentType;
+import util.spring.gui.publisher.SPublisher;
 
 public class HomeModel {
 	
-	ApplicationEventPublisher publisher;
 	
+	final SPublisher spublisher;
 	
-	public HomeModel(ApplicationEventPublisher publisher) {
-		this.publisher = publisher;
+	public HomeModel(SPublisher spublisher) {
+		this.spublisher = spublisher;
 	}
 	
 	public void publishEmployeeOpenEvent() {
-		publisher.publishEvent(new SComponentEvent(this, SComponentType.EMPLOYEE, SEventType.OPENING));
+		spublisher.openComponent(SComponentType.EMPLOYEE);
 	}
 	
 	
 	public void publishSchoolOpenEvent() {
-		publisher.publishEvent(new SComponentEvent(this, SComponentType.EMPLOYEE, SEventType.OPENING));
+		spublisher.openComponent(SComponentType.SCHOOL);
 	}
 	
 }

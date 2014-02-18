@@ -1,19 +1,18 @@
 package fit2drive;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 
-import util.spring.gui.component.SEventType;
-import util.spring.gui.component.SComponentEvent;
-import util.spring.gui.component.SComponentType;
+import util.spring.gui.publisher.SComponentType;
+import util.spring.gui.publisher.SPublisher;
 
 public class LauncherBean {
-
-	@Autowired
-	ApplicationEventPublisher publisher;
+	
+	@Autowired SPublisher spublisher;
 
 	public void start() {
-		this.publisher.publishEvent(new SComponentEvent(this, SComponentType.HOME, SEventType.OPENING));
+		
+		spublisher.openComponent(SComponentType.HOME);
+		
 	}
 
 }

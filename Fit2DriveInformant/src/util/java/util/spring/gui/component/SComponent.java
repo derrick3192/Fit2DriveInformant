@@ -1,5 +1,6 @@
 package util.spring.gui.component;
 
+import util.spring.gui.publisher.SComponentType;
 import fit2drive.data.dao.Dao;
 import fit2drive.data.entities.F2DEntity;
 

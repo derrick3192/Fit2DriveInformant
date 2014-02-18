@@ -1,11 +1,11 @@
 package fit2drive.gui.home;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 
 import util.spring.gui.component.SBaseComponent;
 import util.spring.gui.component.SBaseController;
-import util.spring.gui.component.SComponentType;
+import util.spring.gui.publisher.SComponentType;
+import util.spring.gui.publisher.SPublisher;
 
 public class HomeComponent extends SBaseComponent{
 	
@@ -15,11 +15,11 @@ public class HomeComponent extends SBaseComponent{
 	}
 
 	@Autowired
-	ApplicationEventPublisher publisher;
+	SPublisher spublisher;
 	
 	@Override
 	protected SBaseController createController() {
-		return new HomeController(new HomeView(), new HomeModel(publisher));
+		return new HomeController(new HomeView(), new HomeModel(spublisher));
 	}
 
 }

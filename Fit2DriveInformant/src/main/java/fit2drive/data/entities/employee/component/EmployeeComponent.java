@@ -3,8 +3,8 @@ package fit2drive.data.entities.employee.component;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import util.spring.gui.component.SComponent;
-import util.spring.gui.component.SComponentType;
 import util.spring.gui.component.SIView;
+import util.spring.gui.publisher.SComponentType;
 import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
 import fit2drive.data.entities.employee.dao.EmployeeDao;

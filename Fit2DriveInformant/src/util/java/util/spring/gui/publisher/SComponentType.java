@@ -1,7 +1,7 @@
-package util.spring.gui.component;
+package util.spring.gui.publisher;
 
 public enum SComponentType {
 	EMPLOYEE,
 	HOME,
-	SCHOOl,
+	SCHOOL,
 }

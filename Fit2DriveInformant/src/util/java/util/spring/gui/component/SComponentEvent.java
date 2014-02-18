@@ -2,6 +2,8 @@ package util.spring.gui.component;
 
 import org.springframework.context.ApplicationEvent;
 
+import util.spring.gui.publisher.SComponentType;
+
 public class SComponentEvent extends ApplicationEvent{
 	
 	final SComponentType componentType;

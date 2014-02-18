@@ -1,8 +1,8 @@
 package util.spring.gui.component;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationListener;
+
+import util.spring.gui.publisher.SComponentType;
 
 
 
@@ -18,9 +18,6 @@ public abstract class SBaseComponent implements ApplicationListener<SComponentEv
 
 	/** Controller of the component **/
 	private SBaseController controller;
-
-	@Autowired
-	ApplicationEventPublisher publisher;
 
 	public final SComponentType componentType;
 
