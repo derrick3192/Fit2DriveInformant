@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 public abstract class SBaseController {
 
 	/** Frame which the controller controls. **/
-	JFrame frame = new JFrame();
+	protected JFrame frame = new JFrame();
 
 
 	/**

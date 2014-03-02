@@ -35,8 +35,9 @@
 	<!-- COMPONENTS -->
 	<bean id="homeComponent"		class="fit2drive.gui.home.HomeComponent" />
 	
+	<!-- ENTITY COMPONENTS -->
 	<bean id="employeeComponent"	class="fit2drive.data.entities.employee.component.EmployeeComponent"/>
-	<bean id="schoolComponent" class="fit2drive.data.entities.school.component.SchoolComponent"/>
+	<bean id="schoolComponent" 		class="fit2drive.data.entities.school.component.SchoolComponent"/>
 
 
 </beans>

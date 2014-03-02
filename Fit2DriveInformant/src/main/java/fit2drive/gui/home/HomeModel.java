@@ -1,8 +1,8 @@
 package fit2drive.gui.home;
 
 
-import util.spring.gui.publisher.SComponentType;
 import util.spring.gui.publisher.SPublisher;
+import util.spring.gui.publisher.ids.SComponentType;
 
 public class HomeModel {
 	

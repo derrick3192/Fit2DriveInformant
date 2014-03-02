@@ -15,6 +15,9 @@ public class HomeController extends SBaseController{
 		super(view);
 		this.model = model;
 		
+		// open the frame when the application starts.
+		this.frame.requestFocus();
+		
 		view.addActionListener(HomeView.Menuitems.EMPLOYEE, new ActionListener() {
 			
 			@Override

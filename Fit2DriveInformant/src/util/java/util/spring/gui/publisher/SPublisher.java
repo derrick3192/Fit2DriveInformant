@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationEventPublisher;
 
 import util.spring.gui.component.SComponentEvent;
 import util.spring.gui.component.SEventType;
+import util.spring.gui.publisher.ids.SComponentType;
 
 
 public class SPublisher {

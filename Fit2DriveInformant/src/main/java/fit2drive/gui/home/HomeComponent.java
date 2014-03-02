@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import util.spring.gui.component.SBaseComponent;
 import util.spring.gui.component.SBaseController;
-import util.spring.gui.publisher.SComponentType;
 import util.spring.gui.publisher.SPublisher;
+import util.spring.gui.publisher.ids.SComponentType;
 
 public class HomeComponent extends SBaseComponent{
 	

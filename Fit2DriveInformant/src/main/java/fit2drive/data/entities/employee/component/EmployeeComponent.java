@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import util.spring.gui.component.SComponent;
 import util.spring.gui.component.SIView;
-import util.spring.gui.publisher.SComponentType;
+import util.spring.gui.publisher.ids.SComponentType;
 import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.employee.EmployeeData;
 import fit2drive.data.entities.employee.dao.EmployeeDao;
