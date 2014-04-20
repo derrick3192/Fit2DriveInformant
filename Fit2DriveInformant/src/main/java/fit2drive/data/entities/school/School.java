@@ -50,6 +50,10 @@ public class School extends F2DEntity{
 		int phoneNumber = Integer.parseInt(data.getPhone());
 		String religeon = data.getReligion();
 		
+		if (name == null) {
+			throw new IllegalArgumentException("name is null");
+		}
+		
 		return new School(
 				name,
 				principal,

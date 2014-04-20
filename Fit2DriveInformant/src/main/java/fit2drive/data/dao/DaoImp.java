@@ -8,6 +8,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fit2drive.data.entities.F2DEntity;
 
+
+/*
+ * 		Example of performing a rollback using hibernate from MKong.		
+ * 
+ *         Session session = null;
+    	Transaction tx = null;
+ 
+    	try{
+    		session = HibernateUtil.getSessionFactory().openSession();
+    		tx = session.beginTransaction();
+    		tx.setTimeout(5);
+ 
+    		//doSomething(session);
+ 
+    		tx.commit();
+ 
+ 
+    	}catch(RuntimeException e){
+    		try{
+    			tx.rollback();
+    		}catch(RuntimeException rbe){
+    			log.error("Couldn’t roll back transaction", rbe);
+    		}
+    		throw e;
+    	}finally{
+    		if(session!=null){
+    			session.close();
+    		}
+    	}
+ */
+
+
+
 /**
  * @author Derrick
  * 
