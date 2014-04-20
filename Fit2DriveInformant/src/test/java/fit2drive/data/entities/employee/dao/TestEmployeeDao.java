@@ -40,6 +40,9 @@ public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeData, Employee
 	}
 	
 	
+	/**
+	 * Test that the photo is saving correctly.
+	 */
 	@Test
 	public void testPhotoIsSaving() {
 		
@@ -74,6 +77,10 @@ public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeData, Employee
 
 	}
 	
+	
+	/**
+	 * This method tests that the test is indeed using a valid picture, other tests rely on this method.
+	 */
 	@Test
 	public void testPic() {
 		assertTrue(
