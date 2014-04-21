@@ -83,13 +83,20 @@ public interface Dao<ENTITY extends F2DEntity, DATA> {
 	
 	
 	/**
-	 * Headings
+	 * Headings.
 	 */
 	public String[] getHeadings();
 	
 	
 	/**
-	 * No of columns
+	 * No of columns.
 	 */
 	public int numberOfColumns();
+	
+	
+	
+	/**
+	 * Get the data.
+	 */
+	public Object[][] getData();
 }

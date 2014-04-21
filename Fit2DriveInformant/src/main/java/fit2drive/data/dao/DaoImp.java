@@ -147,5 +147,23 @@ public abstract class DaoImp<ENTITY extends F2DEntity, DATA> implements Dao<ENTI
 		return this.numberOfColumns();
 	}
 	
+	@Override
+	public Object[][] getData() {
+		
+		final int noRows = this.getCount();
+		final int noColumns = this.numberOfColumns();
+		
+		List<ENTITY> entities = this.getAll();
+		Object[][] data = new Object[noRows][noColumns]; 
+		
+		for (int i = 0; i < noRows; i++) {
+			Object[] rowOfData = entities.get(i).asRow();
+			for (int j = 0; j < noColumns; j++) {
+				data[i][j] = rowOfData[j];
+			}
+		}
+		
+		return data;
+	}
 
 }

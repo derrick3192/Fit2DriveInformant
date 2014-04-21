@@ -22,7 +22,7 @@ public class MainTest {
 
 			@SuppressWarnings("unused")
 			LauncherBean launcherBean = ctx.getBean(LauncherBean.class);
-
+			launcherBean.start();
 			((ConfigurableApplicationContext) ctx).close();
 		} catch (Exception e) {
 			fail("The application failed");
