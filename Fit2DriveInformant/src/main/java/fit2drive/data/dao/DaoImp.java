@@ -48,7 +48,7 @@ import fit2drive.data.entities.F2DEntity;
  *
  * @param <ENTITY> class of the enity the Dao managers
  */
-public abstract class  DaoImp<ENTITY extends F2DEntity, DATA> implements Dao<ENTITY, DATA> {
+public abstract class DaoImp<ENTITY extends F2DEntity, DATA> implements Dao<ENTITY, DATA> {
 
 
 
@@ -135,7 +135,17 @@ public abstract class  DaoImp<ENTITY extends F2DEntity, DATA> implements Dao<ENT
 	public int getCount() {
 		return this.getAll().size();
 	}
-	
+
+
+	@Override
+	public String[] getHeadings() {
+		return this.createValidEntity().headings();
+	}
+
+	@Override
+	public int numberOfColumns() {
+		return this.numberOfColumns();
+	}
 	
 
 }

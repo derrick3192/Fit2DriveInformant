@@ -79,4 +79,17 @@ public interface Dao<ENTITY extends F2DEntity, DATA> {
 	 * Create an entity for testing purposes and table functionality for retrieving headings.
 	 */
 	public ENTITY createValidEntity();
+	
+	
+	
+	/**
+	 * Headings
+	 */
+	public String[] getHeadings();
+	
+	
+	/**
+	 * No of columns
+	 */
+	public int numberOfColumns();
 }
