@@ -27,5 +27,17 @@ public class Signup extends F2DEntity {
 	/** Date applied **/
 	Date dataApplied;
 
+	@Override
+	public String[] headings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] asRow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

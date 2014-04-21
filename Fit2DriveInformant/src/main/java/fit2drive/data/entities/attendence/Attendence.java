@@ -28,6 +28,18 @@ public class Attendence extends F2DEntity {
 	/** The number of positive feedbacks this <code>Facilitator</code> had **/
 	int noOfPositives;
 
+	@Override
+	public String[] headings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] asRow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	
 }

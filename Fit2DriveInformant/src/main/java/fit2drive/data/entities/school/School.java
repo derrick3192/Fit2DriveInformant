@@ -88,5 +88,19 @@ public class School extends F2DEntity{
 	}
 
 
+	@Override
+	public String[] headings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Object[] asRow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 }

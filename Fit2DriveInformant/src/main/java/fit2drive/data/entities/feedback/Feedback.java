@@ -35,6 +35,18 @@ public class Feedback extends F2DEntity{
 	
 	LikelyHood howMuchWillStratergiesBeUsed;
 
+	@Override
+	public String[] headings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] asRow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }

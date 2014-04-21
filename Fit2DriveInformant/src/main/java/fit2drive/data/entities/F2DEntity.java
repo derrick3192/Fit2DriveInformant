@@ -27,5 +27,10 @@ public abstract class F2DEntity {
 		return this.id;
 	}
 	
-
+	/** Headings this entity has when tabled **/
+	public abstract String[] headings();
+	
+	
+	/** The Array which represents the data in this entity **/
+	public abstract Object[] asRow();
 }

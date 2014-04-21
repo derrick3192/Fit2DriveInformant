@@ -27,5 +27,17 @@ public class Workshop extends F2DEntity{
 	
 	Date dateOfWorkshop;
 
+	@Override
+	public String[] headings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] asRow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

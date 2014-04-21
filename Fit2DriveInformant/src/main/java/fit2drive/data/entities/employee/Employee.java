@@ -169,6 +169,24 @@ public class Employee extends F2DEntity {
 	}
 
 
+
+
+
+
+	@Override
+	public String[] headings() {
+		return new String[]{"ID", "NAME"};
+	}
+
+
+
+
+	@Override
+	public Object[] asRow() {
+		return new Object[]{this.id, this.firstName};
+	}
+
+
 //	@Override
 //	public Object[] getTableRow() {
 //
