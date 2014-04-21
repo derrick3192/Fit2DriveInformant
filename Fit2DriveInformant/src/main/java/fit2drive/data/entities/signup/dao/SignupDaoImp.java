@@ -18,4 +18,10 @@ public class SignupDaoImp extends DaoImp<Signup, SignupData> implements SignupDa
 		return null;
 	}
 
+	@Override
+	public Signup createValidEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

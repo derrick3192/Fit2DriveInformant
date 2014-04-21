@@ -16,5 +16,11 @@ public class FeedbackDaoImp extends DaoImp<Feedback, FeedbackData> implements Fe
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Feedback createValidEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

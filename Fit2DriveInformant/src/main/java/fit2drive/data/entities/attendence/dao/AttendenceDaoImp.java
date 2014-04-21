@@ -16,4 +16,10 @@ public class AttendenceDaoImp extends DaoImp<Attendence, AttendenceData> impleme
 		return null;
 	}
 
+	@Override
+	public Attendence createValidEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

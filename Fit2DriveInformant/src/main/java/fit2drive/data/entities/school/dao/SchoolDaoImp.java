@@ -17,4 +17,11 @@ public class SchoolDaoImp extends DaoImp<School, SchoolData> implements SchoolDa
 		return School.createInstance(data);
 	}
 
+
+	@Override
+	public School createValidEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -70,4 +70,13 @@ public interface Dao<ENTITY extends F2DEntity, DATA> {
 	 * @return new Entity from the data
 	 */
 	public ENTITY createEntity(DATA data);
+	
+	
+	
+	
+	
+	/**
+	 * Create an entity for testing purposes and table functionality for retrieving headings.
+	 */
+	public ENTITY createValidEntity();
 }

@@ -17,6 +17,12 @@ public class WorkshopDaoImp extends DaoImp<Workshop, WorkshopData> implements Wo
 		return null;
 	}
 
+	@Override
+	public Workshop createValidEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 
