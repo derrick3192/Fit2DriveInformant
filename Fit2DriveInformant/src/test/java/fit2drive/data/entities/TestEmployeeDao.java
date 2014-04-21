@@ -1,4 +1,4 @@
-package fit2drive.data.entities.employee.dao;
+package fit2drive.data.entities;
 
 import java.io.File;
 import java.util.Arrays;
