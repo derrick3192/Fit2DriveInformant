@@ -28,6 +28,195 @@ public class Employee extends F2DEntity {
 	
 	String title;
 	
+
+	/**First name of the <code>Employee </code> **/
+	String firstName;
+	
+	/** Last name of the <code>Employee </code> **/
+	String lastName;
+	
+	/** Date of Birth **/
+	Date dob;
+	
+	/** living address **/
+	@Fetch(FetchMode.SELECT)	// select it straight away
+	Address livingAddress;
+	
+	/** working with children picture **/
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn
+	public DataFile picture;
+	
+	
+	/** Is the employee male? **/
+	boolean isMale=false;
+	
+	/** Home number **/
+	int homephoneNumber=0;
+	
+	/** Mobile number **/
+	int mobilenumber=0;
+	
+	/** Working with children number **/
+	String workingChildrenNumber="";
+	
+	/** Is the employee a facilitator? **/
+	boolean isFacilitator=true;
+	
+	/** Is the employee a logistics coordinator? **/
+	boolean isLogisticsCoordinator=false;
+	
+	/** Is the employee a presenter **/
+	boolean isEmployeeAdmin=false;
+	
+	/** Is the employee active **/
+	boolean isEmployeeActive=true;
+	
+	/** Is the employee a school principal **/
+	boolean isPrincipal=false;
+	
+	/** Is some other type of employee **/
+	boolean isOther=false;
+	
+	/** Email account of the employee **/
+	String emailAccount="";
+	
+	
+	
+	
+	
+	
+	public Employee(
+			String name,
+			Date dob,
+			Address livingAddress) {
+		this.firstName = name;
+		this.dob = dob;
+		this.livingAddress = livingAddress;
+	}
+
+
+
+
+
+
+	public Employee(String title, String firstName, String lastName, Date dob, Address livingAddress,
+			DataFile picture, boolean male, int homephoneNumber,
+			int mobilenumber, String workingChildrenNumber,
+			boolean facilitator, boolean logisticsCoordinator,
+			boolean employeeAdmin, boolean principal, boolean other, boolean employeeActive, String emailAccount) {
+		super();
+		this.title = title;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.livingAddress = livingAddress;
+		this.picture = picture;
+		this.isMale = male;
+		this.homephoneNumber = homephoneNumber;
+		this.mobilenumber = mobilenumber;
+		this.workingChildrenNumber = workingChildrenNumber;
+		this.isFacilitator = facilitator;
+		this.isLogisticsCoordinator = logisticsCoordinator;
+		this.isEmployeeAdmin = employeeAdmin;
+		this.isEmployeeActive = employeeActive;
+		this.isPrincipal = principal;
+		this.isOther = other;
+		this.emailAccount = emailAccount;
+	}
+	
+	
+	public static Employee createInstance(EmployeeData data) {
+		
+		Address address = new Address(
+				Integer.parseInt(data.getStreetNumber()),
+				data.getUnit(),
+				data.getStreetName(),
+				data.getSuburb(),
+				Integer.parseInt(data.getPostcode()),
+				data.getState(),
+				data.getCountry());
+		
+		String picturePath  = data.getPictureFilePath();
+		String[] splitPath  = picturePath.split(".");
+		String name 		= splitPath[0];
+		String extension 	= splitPath[1];
+		File file = new File(picturePath);
+		
+		DataFile pic = new DataFile(name, extension, file);
+		
+		return new Employee(
+				data.getTitle(),
+				data.getName(),
+				data.getLastName(),
+				data.getDob(),
+				address,
+				pic,
+				data.isMale(),
+				Integer.parseInt(data.getHomephoneNumber()),
+				Integer.parseInt(data.getMobilenumber()),
+				data.getWorkingChildrenNumber(),
+				data.isFacilitator(),
+				data.isLogisticsCoordinator(),
+				data.isEmployeeAdmin(),
+				data.isPrincipal(),
+				data.isOther(),
+				true,
+				data.getEmailAccount());
+	}
+
+
+
+
+
+
+	@Override
+	public String[] headings() {
+		return new String[]{"ID", "NAME"};
+	}
+
+
+
+
+	@Override
+	public Object[] asRow() {
+		return new Object[]{this.id, this.firstName};
+	}
+
+
+//	@Override
+//	public Object[] getTableRow() {
+//
+//		return new Object[]{
+//		this.title,
+//		this.firstName,
+//		this.lastName,
+//		this.dob,
+//		this.livingAddress.getNumber(),
+//		this.livingAddress.getUnit(),
+//		this.livingAddress.getStreet(),
+//		this.livingAddress.getSuburb(),
+//		this.livingAddress.getPostcode(),
+//		this.livingAddress.getState(),
+//		this.livingAddress.getCountry(),
+//		//ImageUtils.createImageFromBytes(this.picture.getFileAsBytes()).getScaledInstance(50, 50, Image.SCALE_DEFAULT),
+//		this.male,
+//		this.homephoneNumber,
+//		this.mobilenumber,
+//		this.workingChildrenNumber,
+//		this.facilitator,
+//		this.logisticsCoordinator,
+//		this.employeeAdmin,
+//		this.employeeActive,
+//		this.principal,
+//		this.other,
+//		this.emailAccount
+//		};
+//		
+//	}
+
+	
+
 	public String getTitle() {
 		return title;
 	}
@@ -328,192 +517,5 @@ public class Employee extends F2DEntity {
 	public void setEmailAccount(String emailAccount) {
 		this.emailAccount = emailAccount;
 	}
-
-	/**First name of the <code>Employee </code> **/
-	String firstName;
-	
-	/** Last name of the <code>Employee </code> **/
-	String lastName;
-	
-	/** Date of Birth **/
-	Date dob;
-	
-	/** living address **/
-	@Fetch(FetchMode.SELECT)	// select it straight away
-	Address livingAddress;
-	
-	/** working with children picture **/
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn
-	public DataFile picture;
-	
-	
-	/** Is the employee male? **/
-	boolean isMale=false;
-	
-	/** Home number **/
-	int homephoneNumber=0;
-	
-	/** Mobile number **/
-	int mobilenumber=0;
-	
-	/** Working with children number **/
-	String workingChildrenNumber="";
-	
-	/** Is the employee a facilitator? **/
-	boolean isFacilitator=true;
-	
-	/** Is the employee a logistics coordinator? **/
-	boolean isLogisticsCoordinator=false;
-	
-	/** Is the employee a presenter **/
-	boolean isEmployeeAdmin=false;
-	
-	/** Is the employee active **/
-	boolean isEmployeeActive=true;
-	
-	/** Is the employee a school principal **/
-	boolean isPrincipal=false;
-	
-	/** Is some other type of employee **/
-	boolean isOther=false;
-	
-	/** Email account of the employee **/
-	String emailAccount="";
-	
-	
-	
-	
-	
-	
-	public Employee(
-			String name,
-			Date dob,
-			Address livingAddress) {
-		this.firstName = name;
-		this.dob = dob;
-		this.livingAddress = livingAddress;
-	}
-
-
-
-
-
-
-	public Employee(String title, String firstName, String lastName, Date dob, Address livingAddress,
-			DataFile picture, boolean male, int homephoneNumber,
-			int mobilenumber, String workingChildrenNumber,
-			boolean facilitator, boolean logisticsCoordinator,
-			boolean employeeAdmin, boolean principal, boolean other, boolean employeeActive, String emailAccount) {
-		super();
-		this.title = title;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.dob = dob;
-		this.livingAddress = livingAddress;
-		this.picture = picture;
-		this.isMale = male;
-		this.homephoneNumber = homephoneNumber;
-		this.mobilenumber = mobilenumber;
-		this.workingChildrenNumber = workingChildrenNumber;
-		this.isFacilitator = facilitator;
-		this.isLogisticsCoordinator = logisticsCoordinator;
-		this.isEmployeeAdmin = employeeAdmin;
-		this.isEmployeeActive = employeeActive;
-		this.isPrincipal = principal;
-		this.isOther = other;
-		this.emailAccount = emailAccount;
-	}
-	
-	
-	public static Employee createInstance(EmployeeData data) {
-		
-		Address address = new Address(
-				Integer.parseInt(data.getStreetNumber()),
-				data.getUnit(),
-				data.getStreetName(),
-				data.getSuburb(),
-				Integer.parseInt(data.getPostcode()),
-				data.getState(),
-				data.getCountry());
-		
-		String picturePath  = data.getPictureFilePath();
-		String[] splitPath  = picturePath.split(".");
-		String name 		= splitPath[0];
-		String extension 	= splitPath[1];
-		File file = new File(picturePath);
-		
-		DataFile pic = new DataFile(name, extension, file);
-		
-		return new Employee(
-				data.getTitle(),
-				data.getName(),
-				data.getLastName(),
-				data.getDob(),
-				address,
-				pic,
-				data.isMale(),
-				Integer.parseInt(data.getHomephoneNumber()),
-				Integer.parseInt(data.getMobilenumber()),
-				data.getWorkingChildrenNumber(),
-				data.isFacilitator(),
-				data.isLogisticsCoordinator(),
-				data.isEmployeeAdmin(),
-				data.isPrincipal(),
-				data.isOther(),
-				true,
-				data.getEmailAccount());
-	}
-
-
-
-
-
-
-	@Override
-	public String[] headings() {
-		return new String[]{"ID", "NAME"};
-	}
-
-
-
-
-	@Override
-	public Object[] asRow() {
-		return new Object[]{this.id, this.firstName};
-	}
-
-
-//	@Override
-//	public Object[] getTableRow() {
-//
-//		return new Object[]{
-//		this.title,
-//		this.firstName,
-//		this.lastName,
-//		this.dob,
-//		this.livingAddress.getNumber(),
-//		this.livingAddress.getUnit(),
-//		this.livingAddress.getStreet(),
-//		this.livingAddress.getSuburb(),
-//		this.livingAddress.getPostcode(),
-//		this.livingAddress.getState(),
-//		this.livingAddress.getCountry(),
-//		//ImageUtils.createImageFromBytes(this.picture.getFileAsBytes()).getScaledInstance(50, 50, Image.SCALE_DEFAULT),
-//		this.male,
-//		this.homephoneNumber,
-//		this.mobilenumber,
-//		this.workingChildrenNumber,
-//		this.facilitator,
-//		this.logisticsCoordinator,
-//		this.employeeAdmin,
-//		this.employeeActive,
-//		this.principal,
-//		this.other,
-//		this.emailAccount
-//		};
-//		
-//	}
-
 
 }
