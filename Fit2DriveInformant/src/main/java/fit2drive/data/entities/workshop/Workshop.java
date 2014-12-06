@@ -7,12 +7,8 @@ import javax.persistence.Entity;
 import fit2drive.data.entities.F2DEntity;
 import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.entities.school.School;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper=false)
 public class Workshop extends F2DEntity{
 	
 	public Workshop(){}
@@ -37,6 +33,46 @@ public class Workshop extends F2DEntity{
 	public Object[] asRow() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Employee getPresentor1() {
+		return presentor1;
+	}
+
+	public void setPresentor1(Employee presentor1) {
+		this.presentor1 = presentor1;
+	}
+
+	public Employee getPresentor2() {
+		return presentor2;
+	}
+
+	public void setPresentor2(Employee presentor2) {
+		this.presentor2 = presentor2;
+	}
+
+	public School getSchool() {
+		return school;
+	}
+
+	public void setSchool(School school) {
+		this.school = school;
+	}
+
+	public int getNoOfExpectedStudents() {
+		return noOfExpectedStudents;
+	}
+
+	public void setNoOfExpectedStudents(int noOfExpectedStudents) {
+		this.noOfExpectedStudents = noOfExpectedStudents;
+	}
+
+	public Date getDateOfWorkshop() {
+		return dateOfWorkshop;
+	}
+
+	public void setDateOfWorkshop(Date dateOfWorkshop) {
+		this.dateOfWorkshop = dateOfWorkshop;
 	}
 
 

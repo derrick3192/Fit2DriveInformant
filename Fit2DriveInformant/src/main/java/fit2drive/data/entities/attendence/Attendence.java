@@ -2,31 +2,68 @@ package fit2drive.data.entities.attendence;
 
 import javax.persistence.Entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import fit2drive.data.entities.F2DEntity;
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper=false)
 public class Attendence extends F2DEntity {
 	
 	public Attendence(){}
 	
 	/** Did the <code>Facilitator</code> leave negative cancelation? **/
-	boolean negativeCancelation;
+	boolean isNegativeCancelation;
 	
 	/** Did the <code>Facilitator</code> call in sick/busy? **/
-	boolean canceled;
+	boolean isCanceled;
 	
 	/** Did the <code>Facilitator</code> work this **/
-	boolean worked;
+	boolean isWorked;
 	
 	/** The number of students the <code>Facilitator</code> had **/
 	int noStudents;
 	
 	/** The number of positive feedbacks this <code>Facilitator</code> had **/
 	int noOfPositives;
+
+
+	public boolean isNegativeCancelation() {
+		return isNegativeCancelation;
+	}
+
+	public void setNegativeCancelation(boolean isNegativeCancelation) {
+		this.isNegativeCancelation = isNegativeCancelation;
+	}
+
+	public boolean isCanceled() {
+		return isCanceled;
+	}
+
+	public void setCanceled(boolean isCanceled) {
+		this.isCanceled = isCanceled;
+	}
+
+	public boolean isWorked() {
+		return isWorked;
+	}
+
+	public void setWorked(boolean isWorked) {
+		this.isWorked = isWorked;
+	}
+
+	public int getNoStudents() {
+		return noStudents;
+	}
+
+	public void setNoStudents(int noStudents) {
+		this.noStudents = noStudents;
+	}
+
+	public int getNoOfPositives() {
+		return noOfPositives;
+	}
+
+	public void setNoOfPositives(int noOfPositives) {
+		this.noOfPositives = noOfPositives;
+	}
 
 	@Override
 	public String[] headings() {

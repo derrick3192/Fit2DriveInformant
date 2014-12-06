@@ -8,14 +8,10 @@ import org.hibernate.annotations.FetchMode;
 import fit2drive.data.entities.F2DEntity;
 import fit2drive.data.entities.employee.Employee;
 import fit2drive.data.members.address.Address;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper=false)
 public class School extends F2DEntity{
 	
 	public School(){}
@@ -99,6 +95,86 @@ public class School extends F2DEntity{
 	public Object[] asRow() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Employee getPrincipal() {
+		return principal;
+	}
+
+
+	public void setPrincipal(Employee principal) {
+		this.principal = principal;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public boolean isPrivateSchool() {
+		return privateSchool;
+	}
+
+
+	public void setPrivateSchool(boolean privateSchool) {
+		this.privateSchool = privateSchool;
+	}
+
+
+	public boolean isPublicSchool() {
+		return publicSchool;
+	}
+
+
+	public void setPublicSchool(boolean publicSchool) {
+		this.publicSchool = publicSchool;
+	}
+
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
+	public String getReligeon() {
+		return religeon;
+	}
+
+
+	public void setReligeon(String religeon) {
+		this.religeon = religeon;
+	}
+
+
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 

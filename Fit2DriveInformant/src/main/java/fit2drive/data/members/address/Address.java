@@ -3,13 +3,9 @@ package fit2drive.data.members.address;
 import javax.persistence.Embeddable;
 
 import fit2drive.data.members.Fit2DriveMember;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 
-@Data
 @Embeddable
-@EqualsAndHashCode(callSuper=false)
 public class Address extends Fit2DriveMember{
 	
 	/** **/
@@ -127,6 +123,102 @@ public class Address extends Fit2DriveMember{
 	public Object[] getTableRow() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+
+	public int getNumber() {
+		return number;
+	}
+
+
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+
+
+	public String getUnit() {
+		return unit;
+	}
+
+
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+
+
+	public String getStreet() {
+		return street;
+	}
+
+
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+
+
+	public String getSuburb() {
+		return suburb;
+	}
+
+
+
+	public void setSuburb(String suburb) {
+		this.suburb = suburb;
+	}
+
+
+
+	public int getPostcode() {
+		return postcode;
+	}
+
+
+
+	public void setPostcode(int postcode) {
+		this.postcode = postcode;
+	}
+
+
+
+	public String getState() {
+		return state;
+	}
+
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+
+
+	public String getCountry() {
+		return country;
+	}
+
+
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+
+
+	public static String getDefaultcountry() {
+		return defaultCountry;
+	}
+
+
+
+	public static String getDefaultstate() {
+		return defaultState;
 	}
 
 

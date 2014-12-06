@@ -2,10 +2,9 @@ package fit2drive.data.entities.employee;
 
 import java.util.Date;
 
-import lombok.Data;
 
 
-@Data
+
 public class EmployeeData {
 
 	String title;
@@ -14,6 +13,182 @@ public class EmployeeData {
 	Date dob;
 	boolean male;
 	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public boolean isMale() {
+		return male;
+	}
+
+	public void setMale(boolean male) {
+		this.male = male;
+	}
+
+	public String getStreetNumber() {
+		return streetNumber;
+	}
+
+	public void setStreetNumber(String streetNumber) {
+		this.streetNumber = streetNumber;
+	}
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getSuburb() {
+		return suburb;
+	}
+
+	public void setSuburb(String suburb) {
+		this.suburb = suburb;
+	}
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getPictureFilePath() {
+		return pictureFilePath;
+	}
+
+	public void setPictureFilePath(String pictureFilePath) {
+		this.pictureFilePath = pictureFilePath;
+	}
+
+	public String getHomephoneNumber() {
+		return homephoneNumber;
+	}
+
+	public void setHomephoneNumber(String homephoneNumber) {
+		this.homephoneNumber = homephoneNumber;
+	}
+
+	public String getMobilenumber() {
+		return mobilenumber;
+	}
+
+	public void setMobilenumber(String mobilenumber) {
+		this.mobilenumber = mobilenumber;
+	}
+
+	public String getWorkingChildrenNumber() {
+		return workingChildrenNumber;
+	}
+
+	public void setWorkingChildrenNumber(String workingChildrenNumber) {
+		this.workingChildrenNumber = workingChildrenNumber;
+	}
+
+	public boolean isFacilitator() {
+		return facilitator;
+	}
+
+	public void setFacilitator(boolean facilitator) {
+		this.facilitator = facilitator;
+	}
+
+	public boolean isLogisticsCoordinator() {
+		return logisticsCoordinator;
+	}
+
+	public void setLogisticsCoordinator(boolean logisticsCoordinator) {
+		this.logisticsCoordinator = logisticsCoordinator;
+	}
+
+	public boolean isEmployeeAdmin() {
+		return employeeAdmin;
+	}
+
+	public void setEmployeeAdmin(boolean employeeAdmin) {
+		this.employeeAdmin = employeeAdmin;
+	}
+
+	public boolean isPrincipal() {
+		return principal;
+	}
+
+	public void setPrincipal(boolean principal) {
+		this.principal = principal;
+	}
+
+	public boolean isOther() {
+		return other;
+	}
+
+	public void setOther(boolean other) {
+		this.other = other;
+	}
+
+	public String getEmailAccount() {
+		return emailAccount;
+	}
+
+	public void setEmailAccount(String emailAccount) {
+		this.emailAccount = emailAccount;
+	}
+
 	String streetNumber;
 	String unit;
 	String streetName;

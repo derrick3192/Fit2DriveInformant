@@ -10,15 +10,11 @@ import javax.persistence.Lob;
 import org.hibernate.annotations.Type;
 
 import fit2drive.data.entities.F2DEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 /**
  * Class to wrap an arbitrary file to be saved to a database using
  * Hibernate.
  */
-@EqualsAndHashCode(callSuper=false)
-@Data
+
 @Entity
 public class DataFile extends F2DEntity {
 	
@@ -113,6 +109,30 @@ public class DataFile extends F2DEntity {
 	public Object[] asRow() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public String getExtension() {
+		return extension;
+	}
+
+	public void setExtension(String extension) {
+		this.extension = extension;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public byte[] getFileAsBytes() {
+		return fileAsBytes;
+	}
+
+	public void setFileAsBytes(byte[] fileAsBytes) {
+		this.fileAsBytes = fileAsBytes;
 	}
 
 

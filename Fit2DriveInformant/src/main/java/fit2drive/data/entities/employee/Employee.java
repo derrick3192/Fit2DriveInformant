@@ -12,8 +12,6 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import fit2drive.data.entities.F2DEntity;
 import fit2drive.data.members.address.Address;
 import fit2drive.data.members.datafile.DataFile;
@@ -24,14 +22,313 @@ import fit2drive.data.members.datafile.DataFile;
  *	Class to encapsulate an employee
  */
 @Entity
-@EqualsAndHashCode(callSuper=false)
-@Data
 public class Employee extends F2DEntity {
 	
 	public Employee(){};
 	
 	String title;
 	
+	public String getTitle() {
+		return title;
+	}
+
+
+
+
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+
+
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+
+
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+
+
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+
+
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+
+
+
+
+	public Date getDob() {
+		return dob;
+	}
+
+
+
+
+
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+
+
+
+
+
+	public Address getLivingAddress() {
+		return livingAddress;
+	}
+
+
+
+
+
+
+	public void setLivingAddress(Address livingAddress) {
+		this.livingAddress = livingAddress;
+	}
+
+
+
+
+
+
+	public DataFile getPicture() {
+		return picture;
+	}
+
+
+
+
+
+
+	public void setPicture(DataFile picture) {
+		this.picture = picture;
+	}
+
+
+
+
+
+
+	public boolean isMale() {
+		return male;
+	}
+
+
+
+
+
+
+	public void setMale(boolean male) {
+		this.male = male;
+	}
+
+
+
+
+
+
+	public int getHomephoneNumber() {
+		return homephoneNumber;
+	}
+
+
+
+
+
+
+	public void setHomephoneNumber(int homephoneNumber) {
+		this.homephoneNumber = homephoneNumber;
+	}
+
+
+
+
+
+
+	public int getMobilenumber() {
+		return mobilenumber;
+	}
+
+
+
+
+
+
+	public void setMobilenumber(int mobilenumber) {
+		this.mobilenumber = mobilenumber;
+	}
+
+
+
+
+
+
+	public String getWorkingChildrenNumber() {
+		return workingChildrenNumber;
+	}
+
+
+
+
+
+
+	public void setWorkingChildrenNumber(String workingChildrenNumber) {
+		this.workingChildrenNumber = workingChildrenNumber;
+	}
+
+
+
+
+
+
+	public boolean isFacilitator() {
+		return facilitator;
+	}
+
+
+
+
+
+
+	public void setFacilitator(boolean facilitator) {
+		this.facilitator = facilitator;
+	}
+
+
+
+
+
+
+	public boolean isLogisticsCoordinator() {
+		return logisticsCoordinator;
+	}
+
+
+
+
+
+
+	public void setLogisticsCoordinator(boolean logisticsCoordinator) {
+		this.logisticsCoordinator = logisticsCoordinator;
+	}
+
+
+
+
+
+
+	public boolean isEmployeeAdmin() {
+		return employeeAdmin;
+	}
+
+
+
+
+
+
+	public void setEmployeeAdmin(boolean employeeAdmin) {
+		this.employeeAdmin = employeeAdmin;
+	}
+
+
+
+
+
+
+	public boolean isEmployeeActive() {
+		return employeeActive;
+	}
+
+
+
+
+
+
+	public void setEmployeeActive(boolean employeeActive) {
+		this.employeeActive = employeeActive;
+	}
+
+
+
+
+
+
+	public boolean isPrincipal() {
+		return principal;
+	}
+
+
+
+
+
+
+	public void setPrincipal(boolean principal) {
+		this.principal = principal;
+	}
+
+
+
+
+
+
+	public boolean isOther() {
+		return other;
+	}
+
+
+
+
+
+
+	public void setOther(boolean other) {
+		this.other = other;
+	}
+
+
+
+
+
+
+	public String getEmailAccount() {
+		return emailAccount;
+	}
+
+
+
+
+
+
+	public void setEmailAccount(String emailAccount) {
+		this.emailAccount = emailAccount;
+	}
+
 	/**First name of the <code>Employee </code> **/
 	String firstName;
 	

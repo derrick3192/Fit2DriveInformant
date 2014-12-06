@@ -4,7 +4,6 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/util/java"/>
         <property name="context-root" value="Fit2DriveInformant-0.0.1-SNAPSHOT.war"/>
         <property name="java-output-path" value="/Fit2DriveInformant/target/classes"/>
     </wb-module>
