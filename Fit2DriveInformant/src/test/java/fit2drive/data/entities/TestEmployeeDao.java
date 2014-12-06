@@ -27,6 +27,8 @@ public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeData, Employee
 	@Test
 	public void testPhotoIsSaving() {
 		
+		assertTrue(dao != null);
+		
 		Employee employeeSaved = dao.createValidEntity();
 		dao.save(employeeSaved);
 		int id = employeeSaved.getId();
@@ -68,7 +70,6 @@ public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeData, Employee
 				"Error, this array should not be 0 for the test",
 				dao.getDataFile().getFileAsBytes().length != 0);
 	}
-
 
 
 	

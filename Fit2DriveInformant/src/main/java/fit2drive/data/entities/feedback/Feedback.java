@@ -43,27 +43,27 @@ public class Feedback extends F2DEntity{
 	}
 
 	public boolean isMale() {
-		return male;
+		return isMale;
 	}
 
 	public void setMale(boolean male) {
-		this.male = male;
+		this.isMale = male;
 	}
 
 	public boolean isFemale() {
-		return female;
+		return isFemale;
 	}
 
 	public void setFemale(boolean female) {
-		this.female = female;
+		this.isFemale = female;
 	}
 
 	public boolean isCanRememberFacilitator() {
-		return canRememberFacilitator;
+		return isCanRememberFacilitator;
 	}
 
 	public void setCanRememberFacilitator(boolean canRememberFacilitator) {
-		this.canRememberFacilitator = canRememberFacilitator;
+		this.isCanRememberFacilitator = canRememberFacilitator;
 	}
 
 	public String getFacilitator() {
@@ -85,11 +85,11 @@ public class Feedback extends F2DEntity{
 
 	int age;
 	
-	boolean male;
+	boolean isMale;
 	
-	boolean female;
+	boolean isFemale;
 	
-	boolean canRememberFacilitator;
+	boolean isCanRememberFacilitator;
 	
 	String facilitator;
 	

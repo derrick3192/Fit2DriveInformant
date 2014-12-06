@@ -140,8 +140,8 @@ public class TestF2DEntitiesConfiguration {
 				String setFieldName;
 				
 				if (field.getType() == boolean.class) {
-					getFieldName = "is"+fieldStringInMethod;
-					setFieldName = "is"+fieldStringInMethod;
+					getFieldName = fieldName;
+					setFieldName = fieldName;
 				} else {
 					getFieldName = "get"+fieldStringInMethod;
 					setFieldName = "set"+fieldStringInMethod;

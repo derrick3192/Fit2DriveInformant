@@ -137,7 +137,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isMale() {
-		return male;
+		return isMale;
 	}
 
 
@@ -146,7 +146,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setMale(boolean male) {
-		this.male = male;
+		this.isMale = male;
 	}
 
 
@@ -209,7 +209,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isFacilitator() {
-		return facilitator;
+		return isFacilitator;
 	}
 
 
@@ -218,7 +218,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setFacilitator(boolean facilitator) {
-		this.facilitator = facilitator;
+		this.isFacilitator = facilitator;
 	}
 
 
@@ -227,7 +227,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isLogisticsCoordinator() {
-		return logisticsCoordinator;
+		return isLogisticsCoordinator;
 	}
 
 
@@ -236,7 +236,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setLogisticsCoordinator(boolean logisticsCoordinator) {
-		this.logisticsCoordinator = logisticsCoordinator;
+		this.isLogisticsCoordinator = logisticsCoordinator;
 	}
 
 
@@ -245,7 +245,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isEmployeeAdmin() {
-		return employeeAdmin;
+		return isEmployeeAdmin;
 	}
 
 
@@ -254,7 +254,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setEmployeeAdmin(boolean employeeAdmin) {
-		this.employeeAdmin = employeeAdmin;
+		this.isEmployeeAdmin = employeeAdmin;
 	}
 
 
@@ -263,7 +263,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isEmployeeActive() {
-		return employeeActive;
+		return isEmployeeActive;
 	}
 
 
@@ -272,7 +272,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setEmployeeActive(boolean employeeActive) {
-		this.employeeActive = employeeActive;
+		this.isEmployeeActive = employeeActive;
 	}
 
 
@@ -281,7 +281,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isPrincipal() {
-		return principal;
+		return isPrincipal;
 	}
 
 
@@ -290,7 +290,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setPrincipal(boolean principal) {
-		this.principal = principal;
+		this.isPrincipal = principal;
 	}
 
 
@@ -299,7 +299,7 @@ public class Employee extends F2DEntity {
 
 
 	public boolean isOther() {
-		return other;
+		return isOther;
 	}
 
 
@@ -308,7 +308,7 @@ public class Employee extends F2DEntity {
 
 
 	public void setOther(boolean other) {
-		this.other = other;
+		this.isOther = other;
 	}
 
 
@@ -349,7 +349,7 @@ public class Employee extends F2DEntity {
 	
 	
 	/** Is the employee male? **/
-	boolean male=false;
+	boolean isMale=false;
 	
 	/** Home number **/
 	int homephoneNumber=0;
@@ -361,22 +361,22 @@ public class Employee extends F2DEntity {
 	String workingChildrenNumber="";
 	
 	/** Is the employee a facilitator? **/
-	boolean facilitator=true;
+	boolean isFacilitator=true;
 	
 	/** Is the employee a logistics coordinator? **/
-	boolean logisticsCoordinator=false;
+	boolean isLogisticsCoordinator=false;
 	
 	/** Is the employee a presenter **/
-	boolean employeeAdmin=false;
+	boolean isEmployeeAdmin=false;
 	
 	/** Is the employee active **/
-	boolean employeeActive=true;
+	boolean isEmployeeActive=true;
 	
 	/** Is the employee a school principal **/
-	boolean principal=false;
+	boolean isPrincipal=false;
 	
 	/** Is some other type of employee **/
-	boolean other=false;
+	boolean isOther=false;
 	
 	/** Email account of the employee **/
 	String emailAccount="";
@@ -412,16 +412,16 @@ public class Employee extends F2DEntity {
 		this.dob = dob;
 		this.livingAddress = livingAddress;
 		this.picture = picture;
-		this.male = male;
+		this.isMale = male;
 		this.homephoneNumber = homephoneNumber;
 		this.mobilenumber = mobilenumber;
 		this.workingChildrenNumber = workingChildrenNumber;
-		this.facilitator = facilitator;
-		this.logisticsCoordinator = logisticsCoordinator;
-		this.employeeAdmin = employeeAdmin;
-		this.employeeActive = employeeActive;
-		this.principal = principal;
-		this.other = other;
+		this.isFacilitator = facilitator;
+		this.isLogisticsCoordinator = logisticsCoordinator;
+		this.isEmployeeAdmin = employeeAdmin;
+		this.isEmployeeActive = employeeActive;
+		this.isPrincipal = principal;
+		this.isOther = other;
 		this.emailAccount = emailAccount;
 	}
 	

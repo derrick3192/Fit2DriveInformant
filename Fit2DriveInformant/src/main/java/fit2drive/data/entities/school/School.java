@@ -24,9 +24,9 @@ public class School extends F2DEntity{
 	
 	String email;
 	
-	boolean privateSchool;
+	boolean isPrivateSchool;
 	
-	boolean publicSchool;
+	boolean isPublicSchool;
 	
 	int phoneNumber;
 	
@@ -76,8 +76,8 @@ public class School extends F2DEntity{
 		this.name = name;
 		this.principal = principal;
 		this.email = email;
-		this.privateSchool = privateSchool;
-		this.publicSchool = publicSchool;
+		this.isPrivateSchool = privateSchool;
+		this.isPublicSchool = publicSchool;
 		this.phoneNumber = phoneNumber;		
 		this.religeon = religeon;
 		
@@ -128,23 +128,29 @@ public class School extends F2DEntity{
 	}
 
 
+
+
+
 	public boolean isPrivateSchool() {
-		return privateSchool;
+		return isPrivateSchool;
 	}
 
 
-	public void setPrivateSchool(boolean privateSchool) {
-		this.privateSchool = privateSchool;
+	public void setPrivateSchool(boolean isPrivateSchool) {
+		this.isPrivateSchool = isPrivateSchool;
 	}
+
+
+
 
 
 	public boolean isPublicSchool() {
-		return publicSchool;
+		return isPublicSchool;
 	}
 
 
-	public void setPublicSchool(boolean publicSchool) {
-		this.publicSchool = publicSchool;
+	public void setPublicSchool(boolean isPublicSchool) {
+		this.isPublicSchool = isPublicSchool;
 	}
 
 
