@@ -39,7 +39,7 @@ public class TestEmployeeDao extends DaoImpTest<Employee, EmployeeData, Employee
 				Arrays.equals(employeeSaved.getPicture().getFileAsBytes(), employeeRetrieved.getPicture().getFileAsBytes()));
 		
 		dao.delete(employeeSaved);
-		fail("test change fail");
+		
 	}
 	
 	
