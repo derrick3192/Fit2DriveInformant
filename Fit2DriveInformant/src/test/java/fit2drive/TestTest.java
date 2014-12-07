@@ -8,7 +8,8 @@ public class TestTest {
 	
 	@Test
 	public void testfail() {
-		fail("Test email the perpatraitor which failed a test");
+		//fail("Test email the perpatraitor which failed a test");
+		
 	}
 
 }
