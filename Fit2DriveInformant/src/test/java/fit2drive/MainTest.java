@@ -20,7 +20,6 @@ public class MainTest {
 			ApplicationContext ctx = new ClassPathXmlApplicationContext(
 					"Spring.xml");
 
-			@SuppressWarnings("unused")
 			LauncherBean launcherBean = ctx.getBean(LauncherBean.class);
 			launcherBean.start();
 			((ConfigurableApplicationContext) ctx).close();
