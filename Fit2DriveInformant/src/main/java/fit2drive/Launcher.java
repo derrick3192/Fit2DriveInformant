@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.xml.sax.SAXException;
 
-
+// Change to test git polling
 public class Launcher {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
